@@ -1,0 +1,42 @@
+[
+  {
+    "id": "p1",
+    "displayName": "Lumen",
+    "partyGroup": null
+  },
+  {
+    "id": "p2",
+    "displayName": "Grit",
+    "partyGroup": null
+  },
+  {
+    "id": "p3",
+    "displayName": "Fizzbang",
+    "partyGroup": "party1"
+  },
+  {
+    "id": "p4",
+    "displayName": "Wobbles",
+    "partyGroup": "party1"
+  },
+  {
+    "id": "p5",
+    "displayName": "Havoc",
+    "partyGroup": null
+  },
+  {
+    "id": "p6",
+    "displayName": "Velvet",
+    "partyGroup": null
+  },
+  {
+    "id": "p7",
+    "displayName": "Brickwall",
+    "partyGroup": null
+  },
+  {
+    "id": "p8",
+    "displayName": "Echo",
+    "partyGroup": null
+  }
+]

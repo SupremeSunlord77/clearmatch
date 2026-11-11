@@ -1,0 +1,253 @@
+{
+  "id": "match_03",
+  "date": "2026-11-03",
+  "teams": {
+    "A": [
+      "p1",
+      "p2",
+      "p7",
+      "p8"
+    ],
+    "B": [
+      "p3",
+      "p4",
+      "p5",
+      "p6"
+    ]
+  },
+  "messages": [
+    {
+      "id": "m03-001",
+      "timestamp": "2026-11-03T19:00:15.000Z",
+      "playerId": "p6",
+      "team": "B",
+      "text": "gl hf everyone :)"
+    },
+    {
+      "id": "m03-002",
+      "timestamp": "2026-11-03T19:00:37.000Z",
+      "playerId": "p1",
+      "team": "A",
+      "text": "gl hf, I'll take support"
+    },
+    {
+      "id": "m03-003",
+      "timestamp": "2026-11-03T19:01:06.000Z",
+      "playerId": "p7",
+      "team": "A",
+      "text": "hey team, I'll play anchor this round"
+    },
+    {
+      "id": "m03-004",
+      "timestamp": "2026-11-03T19:01:42.000Z",
+      "playerId": "p2",
+      "team": "A",
+      "text": "Lumen on my team again, we're doomed"
+    },
+    {
+      "id": "m03-005",
+      "timestamp": "2026-11-03T19:02:25.000Z",
+      "playerId": "p3",
+      "team": "B",
+      "text": "Wobbles, bet you get first death"
+    },
+    {
+      "id": "m03-006",
+      "timestamp": "2026-11-03T19:02:45.000Z",
+      "playerId": "p4",
+      "team": "B",
+      "text": "bet you get second, clown"
+    },
+    {
+      "id": "m03-007",
+      "timestamp": "2026-11-03T19:03:12.000Z",
+      "playerId": "p5",
+      "team": "B",
+      "text": "gonna kill it this round, stay with me"
+    },
+    {
+      "id": "m03-008",
+      "timestamp": "2026-11-03T19:03:46.000Z",
+      "playerId": "p6",
+      "team": "B",
+      "text": "nice try"
+    },
+    {
+      "id": "m03-009",
+      "timestamp": "2026-11-03T19:04:27.000Z",
+      "playerId": "p8",
+      "team": "A",
+      "text": "pushing A"
+    },
+    {
+      "id": "m03-010",
+      "timestamp": "2026-11-03T19:04:45.000Z",
+      "playerId": "p6",
+      "team": "B",
+      "text": "Echo, you're so bad it's embarrassing"
+    },
+    {
+      "id": "m03-011",
+      "timestamp": "2026-11-03T19:05:10.000Z",
+      "playerId": "p1",
+      "team": "A",
+      "text": "Echo nice entry, I've got your back"
+    },
+    {
+      "id": "m03-012",
+      "timestamp": "2026-11-03T19:05:42.000Z",
+      "playerId": "p6",
+      "team": "B",
+      "text": "gg wp"
+    },
+    {
+      "id": "m03-013",
+      "timestamp": "2026-11-03T19:06:21.000Z",
+      "playerId": "p2",
+      "team": "A",
+      "text": "Lumen move, you're in my way, useless"
+    },
+    {
+      "id": "m03-014",
+      "timestamp": "2026-11-03T19:07:00.000Z",
+      "playerId": "p7",
+      "team": "A",
+      "text": "Lumen good heal, thanks"
+    },
+    {
+      "id": "m03-015",
+      "timestamp": "2026-11-03T19:07:30.000Z",
+      "playerId": "p6",
+      "team": "B",
+      "text": "nice try"
+    },
+    {
+      "id": "m03-016",
+      "timestamp": "2026-11-03T19:08:07.000Z",
+      "playerId": "p6",
+      "team": "B",
+      "text": "Echo just quit, nobody wants you here"
+    },
+    {
+      "id": "m03-017",
+      "timestamp": "2026-11-03T19:08:51.000Z",
+      "playerId": "p8",
+      "team": "A",
+      "text": "focus the game please"
+    },
+    {
+      "id": "m03-018",
+      "timestamp": "2026-11-03T19:09:12.000Z",
+      "playerId": "p4",
+      "team": "B",
+      "text": "Fizzbang, that grenade was criminal"
+    },
+    {
+      "id": "m03-019",
+      "timestamp": "2026-11-03T19:09:40.000Z",
+      "playerId": "p3",
+      "team": "B",
+      "text": "criminally good you mean"
+    },
+    {
+      "id": "m03-020",
+      "timestamp": "2026-11-03T19:10:15.000Z",
+      "playerId": "p5",
+      "team": "B",
+      "text": "destroy their base, let's go"
+    },
+    {
+      "id": "m03-021",
+      "timestamp": "2026-11-03T19:10:57.000Z",
+      "playerId": "p6",
+      "team": "B",
+      "text": "gg wp"
+    },
+    {
+      "id": "m03-022",
+      "timestamp": "2026-11-03T19:11:16.000Z",
+      "playerId": "p2",
+      "team": "A",
+      "text": "Lumen still useless"
+    },
+    {
+      "id": "m03-023",
+      "timestamp": "2026-11-03T19:12:15.000Z",
+      "playerId": "p1",
+      "team": "A",
+      "text": "good round everyone, let's reset"
+    },
+    {
+      "id": "m03-024",
+      "timestamp": "2026-11-03T19:12:55.000Z",
+      "playerId": "p7",
+      "team": "A",
+      "text": "my bad on that peek, I'll hold back next time"
+    },
+    {
+      "id": "m03-025",
+      "timestamp": "2026-11-03T19:13:12.000Z",
+      "playerId": "p6",
+      "team": "B",
+      "text": "Echo uninstall, seriously"
+    },
+    {
+      "id": "m03-026",
+      "timestamp": "2026-11-03T19:14:07.000Z",
+      "playerId": "p6",
+      "team": "B",
+      "text": "nice try :)"
+    },
+    {
+      "id": "m03-027",
+      "timestamp": "2026-11-03T19:14:45.000Z",
+      "playerId": "p8",
+      "team": "A",
+      "text": "gg"
+    },
+    {
+      "id": "m03-028",
+      "timestamp": "2026-11-03T19:15:00.000Z",
+      "playerId": "p6",
+      "team": "B",
+      "text": "gg wp all"
+    },
+    {
+      "id": "m03-029",
+      "timestamp": "2026-11-03T19:15:22.000Z",
+      "playerId": "p1",
+      "team": "A",
+      "text": "gg, thanks team"
+    },
+    {
+      "id": "m03-030",
+      "timestamp": "2026-11-03T19:15:51.000Z",
+      "playerId": "p5",
+      "team": "B",
+      "text": "gg, killed it"
+    }
+  ],
+  "events": [
+    {
+      "id": "e03-001",
+      "timestamp": "2026-11-03T19:06:37.000Z",
+      "type": "mute",
+      "byPlayerId": "p1",
+      "targetPlayerId": "p2"
+    },
+    {
+      "id": "e03-002",
+      "timestamp": "2026-11-03T19:11:42.000Z",
+      "type": "report",
+      "byPlayerId": "p1",
+      "targetPlayerId": "p2"
+    },
+    {
+      "id": "e03-003",
+      "timestamp": "2026-11-03T19:13:36.000Z",
+      "type": "report",
+      "byPlayerId": "p8",
+      "targetPlayerId": "p6"
+    }
+  ]
+}

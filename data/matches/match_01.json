@@ -1,0 +1,246 @@
+{
+  "id": "match_01",
+  "date": "2026-11-01",
+  "teams": {
+    "A": [
+      "p1",
+      "p2",
+      "p3",
+      "p4"
+    ],
+    "B": [
+      "p5",
+      "p6",
+      "p7",
+      "p8"
+    ]
+  },
+  "messages": [
+    {
+      "id": "m01-001",
+      "timestamp": "2026-11-01T19:00:15.000Z",
+      "playerId": "p1",
+      "team": "A",
+      "text": "gl hf everyone"
+    },
+    {
+      "id": "m01-002",
+      "timestamp": "2026-11-01T19:00:37.000Z",
+      "playerId": "p3",
+      "team": "A",
+      "text": "Wobbles you ready to carry me again?"
+    },
+    {
+      "id": "m01-003",
+      "timestamp": "2026-11-01T19:01:06.000Z",
+      "playerId": "p4",
+      "team": "A",
+      "text": "carry you? I'm still recovering from your throw last night, you donut"
+    },
+    {
+      "id": "m01-004",
+      "timestamp": "2026-11-01T19:01:42.000Z",
+      "playerId": "p5",
+      "team": "B",
+      "text": "gl hf, I'm gonna kill it this round"
+    },
+    {
+      "id": "m01-005",
+      "timestamp": "2026-11-01T19:02:25.000Z",
+      "playerId": "p2",
+      "team": "A",
+      "text": "Lumen why are you even on this team, you're useless"
+    },
+    {
+      "id": "m01-006",
+      "timestamp": "2026-11-01T19:02:45.000Z",
+      "playerId": "p1",
+      "team": "A",
+      "text": "I'll take mid, call if you need help"
+    },
+    {
+      "id": "m01-007",
+      "timestamp": "2026-11-01T19:03:12.000Z",
+      "playerId": "p6",
+      "team": "B",
+      "text": "lol your team is trash"
+    },
+    {
+      "id": "m01-008",
+      "timestamp": "2026-11-01T19:03:46.000Z",
+      "playerId": "p7",
+      "team": "B",
+      "text": "shut up and play, idiots"
+    },
+    {
+      "id": "m01-009",
+      "timestamp": "2026-11-01T19:04:27.000Z",
+      "playerId": "p8",
+      "team": "B",
+      "text": "pushing B site"
+    },
+    {
+      "id": "m01-010",
+      "timestamp": "2026-11-01T19:04:45.000Z",
+      "playerId": "p2",
+      "team": "A",
+      "text": "Lumen you missed again, absolute bot"
+    },
+    {
+      "id": "m01-011",
+      "timestamp": "2026-11-01T19:05:10.000Z",
+      "playerId": "p1",
+      "team": "A",
+      "text": "sorry, I'll reposition. Grit can you cover left?"
+    },
+    {
+      "id": "m01-012",
+      "timestamp": "2026-11-01T19:05:42.000Z",
+      "playerId": "p3",
+      "team": "A",
+      "text": "Wobbles walked into the wall again lmao"
+    },
+    {
+      "id": "m01-013",
+      "timestamp": "2026-11-01T19:06:21.000Z",
+      "playerId": "p4",
+      "team": "A",
+      "text": "says the guy who reloaded with one enemy left, genius"
+    },
+    {
+      "id": "m01-014",
+      "timestamp": "2026-11-01T19:06:37.000Z",
+      "playerId": "p3",
+      "team": "A",
+      "text": "haha fair"
+    },
+    {
+      "id": "m01-015",
+      "timestamp": "2026-11-01T19:07:00.000Z",
+      "playerId": "p5",
+      "team": "B",
+      "text": "destroy their base, go go"
+    },
+    {
+      "id": "m01-016",
+      "timestamp": "2026-11-01T19:07:30.000Z",
+      "playerId": "p6",
+      "team": "B",
+      "text": "Brickwall you're clueless, stop feeding"
+    },
+    {
+      "id": "m01-017",
+      "timestamp": "2026-11-01T19:08:07.000Z",
+      "playerId": "p7",
+      "team": "B",
+      "text": "whatever, you're worse"
+    },
+    {
+      "id": "m01-018",
+      "timestamp": "2026-11-01T19:08:51.000Z",
+      "playerId": "p2",
+      "team": "A",
+      "text": "Lumen just uninstall honestly"
+    },
+    {
+      "id": "m01-019",
+      "timestamp": "2026-11-01T19:10:15.000Z",
+      "playerId": "p1",
+      "team": "A",
+      "text": "nice shot Fizzbang"
+    },
+    {
+      "id": "m01-020",
+      "timestamp": "2026-11-01T19:10:57.000Z",
+      "playerId": "p4",
+      "team": "A",
+      "text": "rotating to A"
+    },
+    {
+      "id": "m01-021",
+      "timestamp": "2026-11-01T19:11:16.000Z",
+      "playerId": "p8",
+      "team": "B",
+      "text": "need a heal"
+    },
+    {
+      "id": "m01-022",
+      "timestamp": "2026-11-01T19:11:42.000Z",
+      "playerId": "p5",
+      "team": "B",
+      "text": "I'm gonna destroy them on this push"
+    },
+    {
+      "id": "m01-023",
+      "timestamp": "2026-11-01T19:12:15.000Z",
+      "playerId": "p6",
+      "team": "B",
+      "text": "this team is hopeless, worst players ever"
+    },
+    {
+      "id": "m01-024",
+      "timestamp": "2026-11-01T19:12:55.000Z",
+      "playerId": "p7",
+      "team": "B",
+      "text": "why do I always get stuck with you noobs"
+    },
+    {
+      "id": "m01-025",
+      "timestamp": "2026-11-01T19:13:12.000Z",
+      "playerId": "p3",
+      "team": "A",
+      "text": "Wobbles if you die first again you're buying snacks"
+    },
+    {
+      "id": "m01-026",
+      "timestamp": "2026-11-01T19:13:36.000Z",
+      "playerId": "p4",
+      "team": "A",
+      "text": "deal, loser buys pizza too"
+    },
+    {
+      "id": "m01-027",
+      "timestamp": "2026-11-01T19:14:07.000Z",
+      "playerId": "p2",
+      "team": "A",
+      "text": "Lumen worst player I've ever seen"
+    },
+    {
+      "id": "m01-028",
+      "timestamp": "2026-11-01T19:14:45.000Z",
+      "playerId": "p1",
+      "team": "A",
+      "text": "gg everyone, good effort"
+    },
+    {
+      "id": "m01-029",
+      "timestamp": "2026-11-01T19:15:00.000Z",
+      "playerId": "p8",
+      "team": "B",
+      "text": "gg"
+    },
+    {
+      "id": "m01-030",
+      "timestamp": "2026-11-01T19:15:22.000Z",
+      "playerId": "p5",
+      "team": "B",
+      "text": "gg, we'll kill it next time"
+    }
+  ],
+  "events": [
+    {
+      "id": "e01-001",
+      "timestamp": "2026-11-01T19:09:12.000Z",
+      "type": "mute",
+      "byPlayerId": "p1",
+      "targetPlayerId": "p2"
+    },
+    {
+      "id": "e01-002",
+      "timestamp": "2026-11-01T19:09:40.000Z",
+      "type": "report",
+      "byPlayerId": "p1",
+      "targetPlayerId": "p2"
+    }
+  ]
+}
