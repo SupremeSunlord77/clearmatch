@@ -1,0 +1,17 @@
+# Dependencies and build output
+node_modules/
+dist/
+build/
+coverage/
+
+# Logs and OS files
+*.log
+.DS_Store
+
+# Secrets: never commit keys
+.env
+.env.*
+!.env.example
+service-account*.json
+*credentials*.json
+*-key.json
