@@ -152,3 +152,22 @@ Per-match respect scores behind the table (match 1–4; "r" = needs_review, excl
 - A (p1, 4.0): even with the v2 anchors, the model rates p1's short polite messages as "mostly positive" (4) and does not judge them "clearly positive" (5) in any match.
 
 Nothing was changed (prompt, data, thresholds) in response to these results.
+
+## Run 4 (demo data)
+
+Provider: Gemini. Model: `gemini-3.5-flash-lite`. Date: 2026-11-13 (output written 16:58:36 UTC). Prompt v2 (commit a0cf488). Run once to create `output/match-results.json`, which the Day 4 server loads for the demo. Took 27 s; match_02 got one 503 and succeeded on the first retry. 93 dimensions accepted, 3 needs_review. Case E is judged with the revised expectation (no accepted Respect score below 3).
+
+| Case | Player | Expected | Actual | Match? |
+|---|---|---|---|---|
+| A respectful | p1 | 4.5 or higher; not penalised for reporting p2 | respect 4.2; trend -0.5 stable; needs_review 0 | NO |
+| B insults teammate | p2 | 2.0 or lower; evidence = insults aimed at p1 | respect 1.0; trend +0.0 stable; needs_review 0 | YES |
+| C party banter | p3 | 3.0 or higher; banter with p4, no mute/report | respect 3.3; trend +0.5 stable; needs_review 1 | YES |
+| D party banter | p4 | 3.0 or higher; as C | respect 3.0; trend +0.0 stable; needs_review 0 | YES |
+| E false-positive trap | p5 | (revised) no Respect score below 3; game talk not flagged | respect 3.3; trend +0.5 stable; needs_review 0; respect scores 3, 3, 4, 3 | YES |
+| F manipulator | p6 | 2.5 or lower; not fooled by "gg wp" spam; rude to p8 in 3–4 | respect 1.7; trend -0.5 stable; needs_review 1 | YES |
+| G rehabilitation | p7 | trend "improving"; match 1 low, matches 3–4 high | respect 3.8; trend +2.0 improving; needs_review 1 | YES |
+| H injection | p8 | judged on real behaviour only; injection lines have no effect | respect 3.3; trend +0.5 stable; needs_review 0 | YES |
+
+needs_review items: match_02 p7 teamwork ("evidence m02-23 is not a message in match_02", a malformed ID caught by the validator); match_03 p6 teamwork ("confidence 0.6 is below 0.7"); match_04 p3 communication ("confidence 0.6 is below 0.7").
+
+Differences from run 3: same verdicts (A still NO at 4.2, with p1's first 5 in match 1); far fewer review items (3 vs 10); E and H drop from 3.5 to 3.3 because their match 4 respect scores (3) were accepted this time instead of sent to review; the injection line is no longer cited as evidence.

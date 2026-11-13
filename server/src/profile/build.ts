@@ -93,7 +93,7 @@ export function buildPlayerProfile(playerId: string, deps: ProfileDeps): PlayerP
         score: r.score,
         counted: c?.status !== "overturned",
         review: c ? { challengeId: c.id, status: c.status, reviewerComment: c.reviewerComment } : null,
-        canChallenge: !c || c.status === "upheld",
+        canChallenge: !c, // one challenge per score: pending is open; upheld and overturned are final
         evidence: deps.evidence.lines(r.evidenceMessageIds).slice(0, MAX_EVIDENCE_LINES),
         aiSummary: r.rationale,
       });

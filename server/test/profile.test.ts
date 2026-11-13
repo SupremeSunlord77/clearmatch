@@ -107,6 +107,7 @@ describe("challenge decisions (D5)", () => {
     assert.equal(lm.counted, true);
     assert.equal(lm.review!.status, "upheld");
     assert.equal(lm.review!.reviewerComment, "Insults were aimed at a teammate.");
+    assert.equal(lm.canChallenge, false);
   });
 
   test("pending still counts", () => {
@@ -158,6 +159,20 @@ describe("challenge rules (D4)", () => {
     assert.ok(store.create({ playerId: "p2", dimension: "respect", matchId: "match_01", reason: "other" }, ctx).ok);
     reject({}, 409, /already an open challenge/, store);
   });
+  test("an upheld score is final and cannot be challenged again", () => {
+    const store = new ChallengeStore(null);
+    const c = store.create({ playerId: "p2", dimension: "respect", matchId: "match_01", reason: "other" }, ctx);
+    assert.ok(c.ok);
+    if (c.ok) store.decide(c.value.id, { decision: "upheld" });
+    reject({}, 409, /upheld on review; the decision is final/, store);
+  });
+  test("an overturned score cannot be challenged again", () => {
+    const store = new ChallengeStore(null);
+    const c = store.create({ playerId: "p2", dimension: "respect", matchId: "match_01", reason: "other" }, ctx);
+    assert.ok(c.ok);
+    if (c.ok) store.decide(c.value.id, { decision: "overturned" });
+    reject({}, 409, /already overturned on review/, store);
+  });
   test("unknown player, match, dimension or reason", () => {
     reject({ playerId: "p99" }, 404, /Unknown player: p99/);
     reject({ matchId: "match_99" }, 404, /Unknown match: match_99/);
@@ -172,6 +187,22 @@ describe("challenge rules (D4)", () => {
     results.matches[0].players.p2.respect.status = "needs_review";
     const r = new ChallengeStore(null).create({ playerId: "p2", dimension: "respect", matchId: "match_01", reason: "other" }, { players, results });
     assert.equal(r.ok, false);
+  });
+  test("reviewer comment: max 300 characters, trimmed", () => {
+    const store = new ChallengeStore(null);
+    const c = store.create({ playerId: "p2", dimension: "respect", matchId: "match_01", reason: "other" }, ctx);
+    assert.ok(c.ok);
+    if (!c.ok) return;
+    const tooLong = store.decide(c.value.id, { decision: "upheld", comment: "x".repeat(301) });
+    assert.equal(tooLong.ok, false);
+    if (!tooLong.ok) {
+      assert.equal(tooLong.status, 400);
+      assert.equal(tooLong.error, "comment is 301 characters (max 300)");
+    }
+    assert.equal(store.get(c.value.id)!.status, "pending"); // a rejected decision changes nothing
+    const ok = store.decide(c.value.id, { decision: "upheld", comment: `  ${"y".repeat(300)}  ` });
+    assert.ok(ok.ok);
+    assert.equal(store.get(c.value.id)!.reviewerComment, "y".repeat(300));
   });
   test("decisions: only pending, only upheld/overturned", () => {
     const store = new ChallengeStore(null);

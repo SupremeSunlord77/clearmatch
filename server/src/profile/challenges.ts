@@ -11,6 +11,7 @@ export const CHALLENGE_REASONS = ["misread_banter", "game_language", "missing_co
 export type ChallengeReason = (typeof CHALLENGE_REASONS)[number];
 export type ChallengeStatus = "pending" | "upheld" | "overturned";
 export const MAX_NOTE_CHARS = 200;
+export const MAX_COMMENT_CHARS = 300;
 
 export interface Challenge {
   id: string;
@@ -96,6 +97,9 @@ export class ChallengeStore {
     if (same.some((c) => c.status === "overturned")) {
       return fail(409, "This score was already overturned on review and no longer counts");
     }
+    if (same.some((c) => c.status === "upheld")) {
+      return fail(409, "This score was upheld on review; the decision is final");
+    }
 
     const challenge: Challenge = {
       id: `ch_${randomUUID().slice(0, 8)}`,
@@ -123,8 +127,12 @@ export class ChallengeStore {
       return fail(400, 'decision must be "upheld" or "overturned"');
     }
     if (comment !== undefined && comment !== null && typeof comment !== "string") return fail(400, "comment must be text");
+    const cleanComment = typeof comment === "string" && comment.trim() !== "" ? comment.trim() : null;
+    if (cleanComment && cleanComment.length > MAX_COMMENT_CHARS) {
+      return fail(400, `comment is ${cleanComment.length} characters (max ${MAX_COMMENT_CHARS})`);
+    }
     c.status = decision;
-    c.reviewerComment = typeof comment === "string" && comment.trim() !== "" ? comment.trim() : null;
+    c.reviewerComment = cleanComment;
     c.decidedAt = new Date().toISOString();
     this.save();
     return { ok: true, value: c };
