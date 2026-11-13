@@ -1,0 +1,220 @@
+{
+  "matchId": "match_04",
+  "players": [
+    {
+      "playerId": "p1",
+      "respect": {
+        "score": 5,
+        "confidence": 0.9,
+        "evidenceMessageIds": [
+          "m04-012",
+          "m04-022"
+        ],
+        "rationale": "Thanks and praises teammates; stays polite under insults."
+      },
+      "teamwork": {
+        "score": 4,
+        "confidence": 0.8,
+        "evidenceMessageIds": [
+          "m04-012",
+          "m04-022"
+        ],
+        "rationale": "Acknowledges calls and praises teamwork."
+      },
+      "communication": {
+        "score": 4,
+        "confidence": 0.8,
+        "evidenceMessageIds": [
+          "m04-012"
+        ],
+        "rationale": "Constructive acknowledgement of a teammate's call."
+      }
+    },
+    {
+      "playerId": "p2",
+      "respect": {
+        "score": 1,
+        "confidence": 0.9,
+        "evidenceMessageIds": [
+          "m04-005",
+          "m04-013"
+        ],
+        "rationale": "Belittles the same teammate again, who mutes and reports them."
+      },
+      "teamwork": {
+        "score": 2,
+        "confidence": 0.75,
+        "evidenceMessageIds": [
+          "m04-005"
+        ],
+        "rationale": "Undermines a teammate before the match starts."
+      },
+      "communication": {
+        "score": 2,
+        "confidence": 0.75,
+        "evidenceMessageIds": [
+          "m04-013"
+        ],
+        "rationale": "Hostile remark with no game information."
+      }
+    },
+    {
+      "playerId": "p3",
+      "respect": {
+        "score": 4,
+        "confidence": 0.75,
+        "evidenceMessageIds": [
+          "m04-019"
+        ],
+        "rationale": "Compliments a party friend's play."
+      },
+      "teamwork": {
+        "score": 3,
+        "confidence": 0.7,
+        "evidenceMessageIds": [],
+        "rationale": "No notable coordination."
+      },
+      "communication": {
+        "score": 3,
+        "confidence": 0.7,
+        "evidenceMessageIds": [],
+        "rationale": "Mostly banter."
+      }
+    },
+    {
+      "playerId": "p4",
+      "respect": {
+        "score": 3,
+        "confidence": 0.75,
+        "evidenceMessageIds": [],
+        "rationale": "Light teasing with a party friend who jokes back."
+      },
+      "teamwork": {
+        "score": 3,
+        "confidence": 0.7,
+        "evidenceMessageIds": [],
+        "rationale": "No notable coordination."
+      },
+      "communication": {
+        "score": 3,
+        "confidence": 0.7,
+        "evidenceMessageIds": [],
+        "rationale": "Mostly banter."
+      }
+    },
+    {
+      "playerId": "p5",
+      "respect": {
+        "score": 4,
+        "confidence": 0.8,
+        "evidenceMessageIds": [
+          "m04-028"
+        ],
+        "rationale": "Friendly close to the match; game language only."
+      },
+      "teamwork": {
+        "score": 4,
+        "confidence": 0.8,
+        "evidenceMessageIds": [
+          "m04-017"
+        ],
+        "rationale": "Leads the final team push."
+      },
+      "communication": {
+        "score": 4,
+        "confidence": 0.75,
+        "evidenceMessageIds": [
+          "m04-017"
+        ],
+        "rationale": "Clear call for a team push."
+      }
+    },
+    {
+      "playerId": "p6",
+      "respect": {
+        "score": 1,
+        "confidence": 0.9,
+        "evidenceMessageIds": [
+          "m04-010",
+          "m04-018"
+        ],
+        "rationale": "Insults the same player again, now a teammate, alongside polite stock phrases."
+      },
+      "teamwork": {
+        "score": 1,
+        "confidence": 0.8,
+        "evidenceMessageIds": [
+          "m04-018"
+        ],
+        "rationale": "Tells a teammate to stop following them."
+      },
+      "communication": {
+        "score": 1,
+        "confidence": 0.85,
+        "evidenceMessageIds": [
+          "m04-009",
+          "m04-014",
+          "m04-024"
+        ],
+        "rationale": "Repeats stock phrases while insulting a teammate."
+      }
+    },
+    {
+      "playerId": "p7",
+      "respect": {
+        "score": 5,
+        "confidence": 0.85,
+        "evidenceMessageIds": [
+          "m04-001",
+          "m04-016",
+          "m04-026"
+        ],
+        "rationale": "Friendly, compliments teammates and thanks them."
+      },
+      "teamwork": {
+        "score": 5,
+        "confidence": 0.85,
+        "evidenceMessageIds": [
+          "m04-011",
+          "m04-026"
+        ],
+        "rationale": "Offers cover and acknowledges support."
+      },
+      "communication": {
+        "score": 4,
+        "confidence": 0.8,
+        "evidenceMessageIds": [
+          "m04-011",
+          "m04-023"
+        ],
+        "rationale": "Clear offers of cover and positive feedback."
+      }
+    },
+    {
+      "playerId": "p8",
+      "respect": {
+        "score": 3,
+        "confidence": 0.8,
+        "evidenceMessageIds": [],
+        "rationale": "Neutral messages; an instruction-like message is ignored for scoring."
+      },
+      "teamwork": {
+        "score": 3,
+        "confidence": 0.7,
+        "evidenceMessageIds": [
+          "m04-015"
+        ],
+        "rationale": "One rotation call; little other coordination."
+      },
+      "communication": {
+        "score": 3,
+        "confidence": 0.7,
+        "evidenceMessageIds": [
+          "m04-015",
+          "m04-025"
+        ],
+        "rationale": "Short calls; one message tries to instruct the scorer and is ignored."
+      }
+    }
+  ]
+}

@@ -1,0 +1,229 @@
+{
+  "matchId": "match_01",
+  "players": [
+    {
+      "playerId": "p1",
+      "respect": {
+        "score": 5,
+        "confidence": 0.9,
+        "evidenceMessageIds": [
+          "m01-001",
+          "m01-011",
+          "m01-028"
+        ],
+        "rationale": "Friendly throughout and stays polite when insulted by a teammate."
+      },
+      "teamwork": {
+        "score": 5,
+        "confidence": 0.85,
+        "evidenceMessageIds": [
+          "m01-006",
+          "m01-011",
+          "m01-019"
+        ],
+        "rationale": "Takes a role, adjusts position and supports teammates."
+      },
+      "communication": {
+        "score": 4,
+        "confidence": 0.8,
+        "evidenceMessageIds": [
+          "m01-006",
+          "m01-011"
+        ],
+        "rationale": "Clear role and positioning calls."
+      }
+    },
+    {
+      "playerId": "p2",
+      "respect": {
+        "score": 1,
+        "confidence": 0.95,
+        "evidenceMessageIds": [
+          "m01-005",
+          "m01-010",
+          "m01-018"
+        ],
+        "rationale": "Repeatedly belittles one teammate, who mutes and reports them."
+      },
+      "teamwork": {
+        "score": 2,
+        "confidence": 0.8,
+        "evidenceMessageIds": [
+          "m01-010",
+          "m01-027"
+        ],
+        "rationale": "Blames a teammate instead of coordinating."
+      },
+      "communication": {
+        "score": 2,
+        "confidence": 0.8,
+        "evidenceMessageIds": [
+          "m01-018",
+          "m01-027"
+        ],
+        "rationale": "Messages are hostile remarks with no game information."
+      }
+    },
+    {
+      "playerId": "p3",
+      "respect": {
+        "score": 3,
+        "confidence": 0.75,
+        "evidenceMessageIds": [],
+        "rationale": "Rough jokes with a party friend who jokes back; no mute or report."
+      },
+      "teamwork": {
+        "score": 3,
+        "confidence": 0.7,
+        "evidenceMessageIds": [],
+        "rationale": "Little team coordination in chat."
+      },
+      "communication": {
+        "score": 3,
+        "confidence": 0.7,
+        "evidenceMessageIds": [],
+        "rationale": "Mostly banter with a friend; little game information."
+      }
+    },
+    {
+      "playerId": "p4",
+      "respect": {
+        "score": 3,
+        "confidence": 0.75,
+        "evidenceMessageIds": [],
+        "rationale": "Trades jokes with a party friend; no sign the banter is unwelcome."
+      },
+      "teamwork": {
+        "score": 4,
+        "confidence": 0.75,
+        "evidenceMessageIds": [
+          "m01-020"
+        ],
+        "rationale": "Calls a rotation for the team."
+      },
+      "communication": {
+        "score": 3,
+        "confidence": 0.7,
+        "evidenceMessageIds": [],
+        "rationale": "Mix of banter and one callout."
+      }
+    },
+    {
+      "playerId": "p5",
+      "respect": {
+        "score": 4,
+        "confidence": 0.8,
+        "evidenceMessageIds": [
+          "m01-004",
+          "m01-030"
+        ],
+        "rationale": "Opens and closes with friendly greetings; game talk is not hostile."
+      },
+      "teamwork": {
+        "score": 4,
+        "confidence": 0.75,
+        "evidenceMessageIds": [
+          "m01-015",
+          "m01-022"
+        ],
+        "rationale": "Pushes the team toward objectives."
+      },
+      "communication": {
+        "score": 4,
+        "confidence": 0.75,
+        "evidenceMessageIds": [
+          "m01-015",
+          "m01-022"
+        ],
+        "rationale": "Energetic calls about the team's plan."
+      }
+    },
+    {
+      "playerId": "p6",
+      "respect": {
+        "score": 1,
+        "confidence": 0.9,
+        "evidenceMessageIds": [
+          "m01-007",
+          "m01-016",
+          "m01-023"
+        ],
+        "rationale": "Insults the opposing team and a teammate."
+      },
+      "teamwork": {
+        "score": 2,
+        "confidence": 0.8,
+        "evidenceMessageIds": [
+          "m01-016",
+          "m01-023"
+        ],
+        "rationale": "Blames teammates and dismisses the team."
+      },
+      "communication": {
+        "score": 2,
+        "confidence": 0.8,
+        "evidenceMessageIds": [
+          "m01-007",
+          "m01-023"
+        ],
+        "rationale": "Messages are put-downs without useful information."
+      }
+    },
+    {
+      "playerId": "p7",
+      "respect": {
+        "score": 1,
+        "confidence": 0.9,
+        "evidenceMessageIds": [
+          "m01-008",
+          "m01-024"
+        ],
+        "rationale": "Calls teammates insulting names."
+      },
+      "teamwork": {
+        "score": 2,
+        "confidence": 0.75,
+        "evidenceMessageIds": [
+          "m01-024"
+        ],
+        "rationale": "Complains about teammates instead of coordinating."
+      },
+      "communication": {
+        "score": 2,
+        "confidence": 0.75,
+        "evidenceMessageIds": [
+          "m01-008",
+          "m01-017"
+        ],
+        "rationale": "Hostile replies with no game information."
+      }
+    },
+    {
+      "playerId": "p8",
+      "respect": {
+        "score": 3,
+        "confidence": 0.75,
+        "evidenceMessageIds": [],
+        "rationale": "Neutral, game-focused messages."
+      },
+      "teamwork": {
+        "score": 4,
+        "confidence": 0.75,
+        "evidenceMessageIds": [
+          "m01-009",
+          "m01-021"
+        ],
+        "rationale": "Shares position and needs with the team."
+      },
+      "communication": {
+        "score": 4,
+        "confidence": 0.8,
+        "evidenceMessageIds": [
+          "m01-009",
+          "m01-021"
+        ],
+        "rationale": "Short, clear callouts."
+      }
+    }
+  ]
+}
