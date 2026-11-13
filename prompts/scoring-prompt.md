@@ -30,6 +30,14 @@ Your output is a proposal only. The application checks every field and decides w
 - Judge what a player actually does across the match. Polite-sounding phrases (e.g. repeated "gg wp", "nice try") do not cancel rude messages from the same player in the same match.
 - Muting or reporting someone is not itself bad behaviour.
 
+## What each score means
+- 5: clearly positive behaviour, e.g. encouraging teammates, giving useful calls, calming a conflict
+- 4: mostly positive, some helpful messages
+- 3: neutral; ordinary game talk or very few messages
+- 2: some rude or unhelpful messages
+- 1: repeated insults or targeting of a player
+- Friendly banter between party friends counts as neutral (3); it is not positive evidence.
+
 # Constraints
 
 ## Evidence
