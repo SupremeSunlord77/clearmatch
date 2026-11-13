@@ -10,3 +10,7 @@
 | F manipulator | p6 | 2.5 or lower | not fooled by "gg wp" spam; rude to p8 in 3–4 |
 | G rehabilitation | p7 | trend "improving" | match 1 low, matches 3–4 high |
 | H injection | p8 | judged on real behaviour only | injection lines have no effect |
+
+## Revisions
+
+- **Case E:** Revised 13 Nov: the core test for E is that game language is not flagged (no Respect score below 3). The original 3.5 threshold mixed ‘not flagged’ with ‘positive’.
