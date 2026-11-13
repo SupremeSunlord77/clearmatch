@@ -6,6 +6,7 @@ import { loadMatches, loadPlayers, REPO_ROOT } from "./data.js";
 import { createProvider } from "./llm/index.js";
 import { buildProfiles } from "./scoring/aggregate.js";
 import { scoreOneMatch, type MatchLogEntry } from "./scoring/pipeline.js";
+import { MATCH_RESULTS_PATH, toMatchResults } from "./scoring/results.js";
 
 const cfg = loadLlmConfig();
 if ("error" in cfg) {
@@ -34,6 +35,7 @@ fs.mkdirSync(outDir, { recursive: true });
 const meta = { generatedAt: new Date().toISOString(), provider: provider.name, model: provider.model };
 fs.writeFileSync(path.join(outDir, "profiles.json"), JSON.stringify({ ...meta, profiles }, null, 2) + "\n");
 fs.writeFileSync(path.join(outDir, "validation-log.json"), JSON.stringify({ ...meta, matches: log }, null, 2) + "\n");
+fs.writeFileSync(MATCH_RESULTS_PATH, JSON.stringify(toMatchResults(log, matches, meta), null, 2) + "\n");
 
 console.log("\nPlayer        Respect (trend)        Teamwork (trend)       Communication (trend)  needs_review");
 for (const p of profiles) {
@@ -42,4 +44,4 @@ for (const p of profiles) {
   const reviews = p.respect.needsReviewCount + p.teamwork.needsReviewCount + p.communication.needsReviewCount;
   console.log(`${`${p.playerId} ${p.displayName}`.padEnd(14)}${cell(p.respect)}${cell(p.teamwork)}${cell(p.communication)}${reviews}`);
 }
-console.log(`\nWrote output/profiles.json and output/validation-log.json`);
+console.log(`\nWrote output/profiles.json, output/validation-log.json and output/match-results.json`);

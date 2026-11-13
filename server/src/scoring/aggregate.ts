@@ -19,6 +19,9 @@ export interface MatchRef {
   date: string;
 }
 
+/** Key for one match + player + dimension, used to exclude overturned scores. */
+export const exclusionKey = (matchId: string, playerId: string, dim: Dimension) => `${matchId}|${playerId}|${dim}`;
+
 const round1 = (x: number) => Math.round(x * 10) / 10;
 const mean = (xs: number[]) => xs.reduce((a, b) => a + b, 0) / xs.length;
 
@@ -32,18 +35,24 @@ function buildDimension(
   playerId: string,
   dim: Dimension,
   matches: MatchRef[],
-  results: MatchValidationResult[]
+  results: MatchValidationResult[],
+  excluded: ReadonlySet<string>
 ): DimensionProfile {
   const contributions: MatchContribution[] = [];
   const early: number[] = []; // matches 1–2
   const late: number[] = []; // matches 3–4
   let needsReviewCount = 0;
+  let excludedCount = 0;
 
   matches.forEach((m, i) => {
     const v = results
       .find((r) => r.matchId === m.id)
       ?.dimensions.find((d) => d.playerId === playerId && d.dimension === dim);
     if (!v) return; // player not in this match
+    if (excluded.has(exclusionKey(m.id, playerId, dim))) {
+      excludedCount++; // e.g. overturned on review: no longer counts
+      return;
+    }
     if (v.status !== "accepted" || !v.proposed) {
       needsReviewCount++;
       return;
@@ -54,27 +63,28 @@ function buildDimension(
   });
 
   if (contributions.length === 0) {
-    return { status: "insufficient_data", score: null, trend: null, trendLabel: null, contributions, needsReviewCount };
+    return { status: "insufficient_data", score: null, trend: null, trendLabel: null, contributions, needsReviewCount, excludedCount };
   }
 
   const totalWeight = contributions.reduce((a, c) => a + c.weight, 0);
   const score = round1(contributions.reduce((a, c) => a + c.score * c.weight, 0) / totalWeight);
   // Trend needs at least one accepted score in each half.
   const trend = early.length > 0 && late.length > 0 ? round1(mean(late) - mean(early)) : null;
-  return { status: "ok", score, trend, trendLabel: trend === null ? null : trendLabel(trend), contributions, needsReviewCount };
+  return { status: "ok", score, trend, trendLabel: trend === null ? null : trendLabel(trend), contributions, needsReviewCount, excludedCount };
 }
 
 export function buildProfiles(
   players: PlayerInfo[],
   matches: MatchRef[],
-  results: MatchValidationResult[]
+  results: MatchValidationResult[],
+  excluded: ReadonlySet<string> = new Set()
 ): PlayerProfile[] {
   if (matches.length > MATCH_WEIGHTS.length) {
     throw new Error(`aggregation expects at most ${MATCH_WEIGHTS.length} matches, got ${matches.length}`);
   }
   const ordered = [...matches].sort((a, b) => a.date.localeCompare(b.date));
   return players.map((p) => {
-    const dims = Object.fromEntries(DIMENSIONS.map((d) => [d, buildDimension(p.id, d, ordered, results)]));
+    const dims = Object.fromEntries(DIMENSIONS.map((d) => [d, buildDimension(p.id, d, ordered, results, excluded)]));
     return { playerId: p.id, displayName: p.displayName, ...dims } as PlayerProfile;
   });
 }

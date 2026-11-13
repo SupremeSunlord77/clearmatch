@@ -62,7 +62,8 @@ export interface DimensionProfile {
   trend: number | null; // mean(matches 3–4) − mean(matches 1–2), 1 decimal
   trendLabel: TrendLabel | null;
   contributions: MatchContribution[]; // accepted scores only
-  needsReviewCount: number; // excluded match scores for this dimension
+  needsReviewCount: number; // match scores sent to human review by the validator
+  excludedCount: number; // match scores removed from aggregation (e.g. overturned on review)
 }
 
 export interface PlayerProfile {

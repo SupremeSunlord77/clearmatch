@@ -8,7 +8,7 @@
     "build": "tsc",
     "start": "node dist/index.js",
     "score": "tsx src/score.ts",
-    "test": "tsx --test test/validate.test.ts test/aggregate.test.ts test/retry.test.ts"
+    "test": "tsx --test test/validate.test.ts test/aggregate.test.ts test/retry.test.ts test/profile.test.ts"
   },
   "dependencies": {
     "@google/genai": "^2.32.0",

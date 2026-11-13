@@ -1,0 +1,45 @@
+{
+  "respect": {
+    "low": [
+      "PLACEHOLDER — respect, low band, tip 1 (to be written by the project owner)",
+      "PLACEHOLDER — respect, low band, tip 2 (to be written by the project owner)"
+    ],
+    "neutral": [
+      "PLACEHOLDER — respect, neutral band, tip 1 (to be written by the project owner)",
+      "PLACEHOLDER — respect, neutral band, tip 2 (to be written by the project owner)"
+    ],
+    "good": [
+      "PLACEHOLDER — respect, good band, tip 1 (to be written by the project owner)",
+      "PLACEHOLDER — respect, good band, tip 2 (to be written by the project owner)"
+    ]
+  },
+  "teamwork": {
+    "low": [
+      "PLACEHOLDER — teamwork, low band, tip 1 (to be written by the project owner)",
+      "PLACEHOLDER — teamwork, low band, tip 2 (to be written by the project owner)"
+    ],
+    "neutral": [
+      "PLACEHOLDER — teamwork, neutral band, tip 1 (to be written by the project owner)",
+      "PLACEHOLDER — teamwork, neutral band, tip 2 (to be written by the project owner)"
+    ],
+    "good": [
+      "PLACEHOLDER — teamwork, good band, tip 1 (to be written by the project owner)",
+      "PLACEHOLDER — teamwork, good band, tip 2 (to be written by the project owner)"
+    ]
+  },
+  "communication": {
+    "low": [
+      "PLACEHOLDER — communication, low band, tip 1 (to be written by the project owner)",
+      "PLACEHOLDER — communication, low band, tip 2 (to be written by the project owner)"
+    ],
+    "neutral": [
+      "PLACEHOLDER — communication, neutral band, tip 1 (to be written by the project owner)",
+      "PLACEHOLDER — communication, neutral band, tip 2 (to be written by the project owner)"
+    ],
+    "good": [
+      "PLACEHOLDER — communication, good band, tip 1 (to be written by the project owner)",
+      "PLACEHOLDER — communication, good band, tip 2 (to be written by the project owner)"
+    ]
+  },
+  "howItWorks": "PLACEHOLDER — one sentence explaining how the profile is worked out (to be written by the project owner)"
+}
