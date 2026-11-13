@@ -12,7 +12,7 @@ import {
 
 /** Weights by match position in date order: matches 1–4. */
 export const MATCH_WEIGHTS = [1, 1, 2, 2];
-export const TREND_THRESHOLD = 0.5;
+export const TREND_THRESHOLD = 1.0;
 
 export interface MatchRef {
   id: string;

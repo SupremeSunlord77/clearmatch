@@ -9,10 +9,10 @@
 - Scope (implemented / simulated / planned) is in docs/scope.md.
 
 ## Stack
-- Node.js 20+, TypeScript throughout, npm workspaces (`client`, `server`).
+- Node.js 20.12+, TypeScript throughout, npm workspaces (`client`, `server`).
 - server/: Node + Express (TypeScript), run with tsx in development, port 3001.
 - client/: React + Vite (TypeScript), Vite default port; Vite proxies `/api` to http://localhost:3001.
-- LLM provider: undecided (Gemini or Claude). No LLM SDK installed yet.
+- LLM provider: Gemini, via the official `@google/genai` SDK (the only LLM SDK). Model name comes only from `LLM_MODEL` in .env; `LLM_PROVIDER=mock` needs no key.
 - No database. Data is JSON files in data/.
 
 ## HARD RULES

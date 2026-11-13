@@ -56,12 +56,14 @@ describe("aggregation (D6)", () => {
     assert.equal(r.trendLabel, "stable");
   });
 
-  test("trend label thresholds at ±0.5", () => {
-    assert.equal(trendLabel(0.5), "improving");
-    assert.equal(trendLabel(0.4), "stable");
-    assert.equal(trendLabel(-0.4), "stable");
-    assert.equal(trendLabel(-0.5), "declining");
-    assert.equal(respectOf([3, 3, 3, 4]).trendLabel, "improving"); // 3.5 − 3 = 0.5
+  test("trend label thresholds at ±1.0", () => {
+    assert.equal(trendLabel(1.0), "improving");
+    assert.equal(trendLabel(0.9), "stable");
+    assert.equal(trendLabel(-0.9), "stable");
+    assert.equal(trendLabel(-1.0), "declining");
+    assert.equal(respectOf([3, 3, 4, 4]).trendLabel, "improving"); // 4 − 3 = 1.0
+    assert.equal(respectOf([3, 3, 3, 4]).trendLabel, "stable"); // 3.5 − 3 = 0.5
+    assert.equal(respectOf([4, 4, 3, 3]).trendLabel, "declining"); // 3 − 4 = −1.0
   });
 
   test("needs_review scores are excluded and counted", () => {

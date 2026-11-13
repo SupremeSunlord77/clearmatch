@@ -32,7 +32,7 @@ Planned (not built)
 
 ## Technology stack
 <!-- Each technology and what it does in this project. -->
-- **Node.js 20+** — runtime for the server and tooling.
+- **Node.js 20.12+** — runtime for the server and tooling.
 - **TypeScript** — typed language used in both client and server.
 - **npm workspaces** — one repository holding the `client` and `server` packages.
 - **Express** — HTTP server exposing the `/api` endpoints (port 3001).
@@ -40,11 +40,11 @@ Planned (not built)
 - **React + Vite** — client user interface and its dev server/build tool; Vite proxies `/api` to the server.
 - **concurrently** — runs client and server together with `npm run dev`.
 - **JSON files** — data storage in `data/` (no database).
-- **LLM provider** — undecided (Gemini or Claude); no LLM SDK is installed yet.
+- **Gemini (`@google/genai`)** — Google's official SDK; the LLM that proposes behaviour scores as JSON. The model is set by `LLM_MODEL` in `.env`.
 
 ## Running or inspecting the work
 <!-- Prerequisites, install, configuration, start, and expected result. -->
-Prerequisites: Node.js 20 or later, npm, git.
+Prerequisites: Node.js 20.12 or later, npm, git.
 
 ```bash
 npm install
