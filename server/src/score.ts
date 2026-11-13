@@ -5,9 +5,7 @@ import { loadLlmConfig } from "./config.js";
 import { loadMatches, loadPlayers, REPO_ROOT } from "./data.js";
 import { createProvider } from "./llm/index.js";
 import { buildProfiles } from "./scoring/aggregate.js";
-import { buildScoringPrompt } from "./scoring/prompt.js";
-import type { MatchValidationResult } from "./scoring/types.js";
-import { validateResponse } from "./scoring/validate.js";
+import { scoreOneMatch, type MatchLogEntry } from "./scoring/pipeline.js";
 
 const cfg = loadLlmConfig();
 if ("error" in cfg) {
@@ -19,18 +17,10 @@ const players = loadPlayers();
 const matches = loadMatches();
 console.log(`Provider: ${provider.name}${provider.model ? ` (model ${provider.model})` : ""}`);
 
-const log: (MatchValidationResult & { rawResponse: string })[] = [];
+const log: MatchLogEntry[] = [];
 for (const match of matches) {
-  let raw: string;
-  try {
-    raw = await provider.scoreMatch({ matchId: match.id, prompt: buildScoringPrompt(match, players) });
-  } catch (err) {
-    // A failed call is treated like unusable output: the whole match goes to review.
-    raw = "";
-    console.error(`  ${match.id}: provider call failed: ${(err as Error).message}`);
-  }
-  const result = validateResponse(raw, match);
-  log.push({ ...result, rawResponse: raw });
+  const result = await scoreOneMatch(provider, match, players, { secrets: [cfg.apiKey ?? ""] });
+  log.push(result);
   const review = result.dimensions.filter((d) => d.status === "needs_review").length;
   console.log(
     `  ${match.id}: ${result.dimensions.length - review} accepted, ${review} needs_review` +

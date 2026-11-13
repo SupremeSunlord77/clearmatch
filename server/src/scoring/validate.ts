@@ -30,7 +30,7 @@ function dimensionShapeProblem(v: unknown): string | null {
 }
 
 /** Whole-response rejection: every player in the match gets needs_review. */
-function rejectAll(match: MatchData, reason: string): MatchValidationResult {
+export function rejectAll(match: MatchData, reason: string): MatchValidationResult {
   const dimensions: DimensionValidation[] = rosterOf(match).flatMap((playerId) =>
     DIMENSIONS.map((dimension) => ({
       matchId: match.id,
