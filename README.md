@@ -52,7 +52,17 @@ cp .env.example .env
 npm run dev
 ```
 
-You should see the client at the URL Vite prints (normally http://localhost:5173) showing "ClearMatch — setup OK", and http://localhost:3001/api/health returning `{"status":"ok"}`.
+The server runs at http://localhost:3001 (http://localhost:3001/api/health returns `{"status":"ok"}`); the client runs at the URL Vite prints (normally http://localhost:5173).
+
+**Scores used by the app.** The server reads the scores saved by the last `npm run score` in `output/match-results.json`. If that file does not exist, it logs "No scoring output found; using mock results" and uses the mock results instead, so the demo works without an API key. The LLM is never called while you use the app.
+
+**See a profile.** Open the client URL. The profile of the selected player is shown; use "View profile of" in the yellow "Demo control" bar to choose another player (or open `/?player=p1` … `/?player=p8`). Each dimension shows its score, band and trend, the matches that lowered it with the exact chat lines, and a "Challenge this score" button for match scores of 1 or 2.
+
+**Review a challenge.** Click "Open simulated reviewer" in the demo bar (or open `/review`). Each pending challenge shows the AI's proposal, the evidence lines with surrounding messages, and the player's reason. Uphold or overturn it, then go back to the profile to see the result: an overturned match no longer counts and the score is recalculated.
+
+**Reset the demo.** Click "Reset demo" in the demo bar. This clears all challenges (saved in `output/challenges.json`) and returns every profile to its original state.
+
+**Run the tests yourself.** [docs/testing-guide.md](docs/testing-guide.md) explains how to run the automated tests, the scoring runs and the browser walkthrough in VS Code.
 
 ## Supplying your own API key
 <!-- How a reviewer supplies their own key; none is included. -->
