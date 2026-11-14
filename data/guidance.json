@@ -1,45 +1,45 @@
 {
   "respect": {
     "low": [
-      "PLACEHOLDER — respect, low band, tip 1 (to be written by the project owner)",
-      "PLACEHOLDER — respect, low band, tip 2 (to be written by the project owner)"
+      "Keep criticism about the play, not the player.",
+      "If a teammate frustrates you, mute and move on instead of replying."
     ],
     "neutral": [
-      "PLACEHOLDER — respect, neutral band, tip 1 (to be written by the project owner)",
-      "PLACEHOLDER — respect, neutral band, tip 2 (to be written by the project owner)"
+      "A quick 'nice save' or 'good try' goes a long way.",
+      "When a teammate struggles, offer a tip rather than staying silent."
     ],
     "good": [
-      "PLACEHOLDER — respect, good band, tip 1 (to be written by the project owner)",
-      "PLACEHOLDER — respect, good band, tip 2 (to be written by the project owner)"
+      "Your messages make matches better for others. Keep it up.",
+      "You set the tone; calming a heated chat helps the whole team."
     ]
   },
   "teamwork": {
     "low": [
-      "PLACEHOLDER — teamwork, low band, tip 1 (to be written by the project owner)",
-      "PLACEHOLDER — teamwork, low band, tip 2 (to be written by the project owner)"
+      "Stick with your team's plan, even when you disagree with it.",
+      "Back up the teammate who needs help instead of blaming them."
     ],
     "neutral": [
-      "PLACEHOLDER — teamwork, neutral band, tip 1 (to be written by the project owner)",
-      "PLACEHOLDER — teamwork, neutral band, tip 2 (to be written by the project owner)"
+      "Tell your team what you're doing before you do it.",
+      "Check where your teammates are before going in alone."
     ],
     "good": [
-      "PLACEHOLDER — teamwork, good band, tip 1 (to be written by the project owner)",
-      "PLACEHOLDER — teamwork, good band, tip 2 (to be written by the project owner)"
+      "You play for the team, and it shows. Keep supporting others.",
+      "Try leading a plan when your team seems unsure."
     ]
   },
   "communication": {
     "low": [
-      "PLACEHOLDER — communication, low band, tip 1 (to be written by the project owner)",
-      "PLACEHOLDER — communication, low band, tip 2 (to be written by the project owner)"
+      "Use chat for calls that help, like enemy positions or timings.",
+      "If a message won't help the team win, leave it unsent."
     ],
     "neutral": [
-      "PLACEHOLDER — communication, neutral band, tip 1 (to be written by the project owner)",
-      "PLACEHOLDER — communication, neutral band, tip 2 (to be written by the project owner)"
+      "Share one useful call each round, such as where the enemy is.",
+      "Keep calls short and clear so teammates can act on them fast."
     ],
     "good": [
-      "PLACEHOLDER — communication, good band, tip 1 (to be written by the project owner)",
-      "PLACEHOLDER — communication, good band, tip 2 (to be written by the project owner)"
+      "Your calls help your team decide quickly. Keep them coming.",
+      "Help quieter teammates by asking what they've spotted."
     ]
   },
-  "howItWorks": "PLACEHOLDER — one sentence explaining how the profile is worked out (to be written by the project owner)"
+  "howItWorks": "Your profile comes from your chat in your last four matches, with recent matches counting most, and a person checks any judgement the AI is unsure about."
 }
