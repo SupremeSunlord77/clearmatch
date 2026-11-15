@@ -1,5 +1,6 @@
 import { createApp } from "./app.js";
 import { loadMatches, loadPlayers } from "./data.js";
+import { OverrideStore } from "./demo/overrides.js";
 import { ChallengeStore } from "./profile/challenges.js";
 import { EvidenceIndex } from "./profile/evidence.js";
 import { loadGuidance } from "./profile/guidance.js";
@@ -19,6 +20,7 @@ const app = createApp({
   guidance: loadGuidance(),
   evidence: new EvidenceIndex(matches, players),
   challenges: new ChallengeStore(),
+  overrides: new OverrideStore(),
 });
 
 app.listen(port, () => {

@@ -1,0 +1,1098 @@
+{
+  "generatedAt": "2026-11-13T16:58:36.358Z",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "matches": [
+    {
+      "matchId": "match_01",
+      "date": "2026-11-01",
+      "responseRejected": false,
+      "responseReason": null,
+      "players": {
+        "p1": {
+          "respect": {
+            "status": "accepted",
+            "score": 5,
+            "confidence": 0.9,
+            "evidenceMessageIds": [
+              "m01-001",
+              "m01-019",
+              "m01-028"
+            ],
+            "rationale": "Player remained consistently polite and encouraging despite enduring harassment.",
+            "reasons": []
+          },
+          "teamwork": {
+            "status": "accepted",
+            "score": 4,
+            "confidence": 0.8,
+            "evidenceMessageIds": [
+              "m01-006",
+              "m01-011"
+            ],
+            "rationale": "Offered help, coordinated positioning, and actively sought to work with the team.",
+            "reasons": []
+          },
+          "communication": {
+            "status": "accepted",
+            "score": 4,
+            "confidence": 0.9,
+            "evidenceMessageIds": [
+              "m01-006",
+              "m01-011",
+              "m01-028"
+            ],
+            "rationale": "Provided constructive callouts, asked for cover, and kept communication useful.",
+            "reasons": []
+          }
+        },
+        "p2": {
+          "respect": {
+            "status": "accepted",
+            "score": 1,
+            "confidence": 1,
+            "evidenceMessageIds": [
+              "m01-005",
+              "m01-018",
+              "m01-027"
+            ],
+            "rationale": "Repeatedly insulted and targeted a teammate with hostile remarks.",
+            "reasons": []
+          },
+          "teamwork": {
+            "status": "accepted",
+            "score": 2,
+            "confidence": 0.8,
+            "evidenceMessageIds": [
+              "m01-005",
+              "m01-018"
+            ],
+            "rationale": "Undermined team morale by verbally attacking a teammate instead of cooperating.",
+            "reasons": []
+          },
+          "communication": {
+            "status": "accepted",
+            "score": 2,
+            "confidence": 0.8,
+            "evidenceMessageIds": [
+              "m01-005",
+              "m01-018",
+              "m01-027"
+            ],
+            "rationale": "Used chat primarily for hostility rather than helpful game communication.",
+            "reasons": []
+          }
+        },
+        "p3": {
+          "respect": {
+            "status": "accepted",
+            "score": 3,
+            "confidence": 0.8,
+            "evidenceMessageIds": [],
+            "rationale": "Engaged in harmless party banter with a friend without crossing into abuse.",
+            "reasons": []
+          },
+          "teamwork": {
+            "status": "accepted",
+            "score": 3,
+            "confidence": 0.7,
+            "evidenceMessageIds": [],
+            "rationale": "Played normally alongside party members with standard banter.",
+            "reasons": []
+          },
+          "communication": {
+            "status": "accepted",
+            "score": 3,
+            "confidence": 0.7,
+            "evidenceMessageIds": [
+              "m01-002",
+              "m01-012"
+            ],
+            "rationale": "Exchanged casual remarks with a party member during the match.",
+            "reasons": []
+          }
+        },
+        "p4": {
+          "respect": {
+            "status": "accepted",
+            "score": 3,
+            "confidence": 0.8,
+            "evidenceMessageIds": [],
+            "rationale": "Participated in lighthearted banter with a party friend.",
+            "reasons": []
+          },
+          "teamwork": {
+            "status": "accepted",
+            "score": 4,
+            "confidence": 0.8,
+            "evidenceMessageIds": [
+              "m01-020"
+            ],
+            "rationale": "Provided useful movement and rotation updates to the team.",
+            "reasons": []
+          },
+          "communication": {
+            "status": "accepted",
+            "score": 4,
+            "confidence": 0.8,
+            "evidenceMessageIds": [
+              "m01-020"
+            ],
+            "rationale": "Gave clear positional callouts regarding team rotations.",
+            "reasons": []
+          }
+        },
+        "p5": {
+          "respect": {
+            "status": "accepted",
+            "score": 3,
+            "confidence": 0.7,
+            "evidenceMessageIds": [],
+            "rationale": "Used standard game language and expressed enthusiasm without insulting others.",
+            "reasons": []
+          },
+          "teamwork": {
+            "status": "accepted",
+            "score": 3,
+            "confidence": 0.7,
+            "evidenceMessageIds": [
+              "m01-015",
+              "m01-022"
+            ],
+            "rationale": "Encouraged pushing objectives with the team.",
+            "reasons": []
+          },
+          "communication": {
+            "status": "accepted",
+            "score": 3,
+            "confidence": 0.7,
+            "evidenceMessageIds": [
+              "m01-015",
+              "m01-022"
+            ],
+            "rationale": "Spoke about match objectives and general team pushes.",
+            "reasons": []
+          }
+        },
+        "p6": {
+          "respect": {
+            "status": "accepted",
+            "score": 2,
+            "confidence": 0.9,
+            "evidenceMessageIds": [
+              "m01-007",
+              "m01-016",
+              "m01-023"
+            ],
+            "rationale": "Insulted teammates multiple times and called them trash.",
+            "reasons": []
+          },
+          "teamwork": {
+            "status": "accepted",
+            "score": 2,
+            "confidence": 0.8,
+            "evidenceMessageIds": [
+              "m01-016",
+              "m01-023"
+            ],
+            "rationale": "Blamed and belittled teammates instead of supporting them.",
+            "reasons": []
+          },
+          "communication": {
+            "status": "accepted",
+            "score": 2,
+            "confidence": 0.8,
+            "evidenceMessageIds": [
+              "m01-007",
+              "m01-023"
+            ],
+            "rationale": "Contributed negative comments and complaints instead of useful calls.",
+            "reasons": []
+          }
+        },
+        "p7": {
+          "respect": {
+            "status": "accepted",
+            "score": 2,
+            "confidence": 0.9,
+            "evidenceMessageIds": [
+              "m01-008",
+              "m01-024"
+            ],
+            "rationale": "Used hostile language and insulted team members.",
+            "reasons": []
+          },
+          "teamwork": {
+            "status": "accepted",
+            "score": 2,
+            "confidence": 0.8,
+            "evidenceMessageIds": [
+              "m01-008",
+              "m01-024"
+            ],
+            "rationale": "Expressed frustration and hostility toward team members.",
+            "reasons": []
+          },
+          "communication": {
+            "status": "accepted",
+            "score": 2,
+            "confidence": 0.8,
+            "evidenceMessageIds": [
+              "m01-008",
+              "m01-024"
+            ],
+            "rationale": "Sent hostile complaints rather than constructive information.",
+            "reasons": []
+          }
+        },
+        "p8": {
+          "respect": {
+            "status": "accepted",
+            "score": 3,
+            "confidence": 0.8,
+            "evidenceMessageIds": [],
+            "rationale": "Communicated normally without showing hostility or special positivity.",
+            "reasons": []
+          },
+          "teamwork": {
+            "status": "accepted",
+            "score": 4,
+            "confidence": 0.8,
+            "evidenceMessageIds": [
+              "m01-009",
+              "m01-021"
+            ],
+            "rationale": "Requested healing and announced pushes to coordinate with the team.",
+            "reasons": []
+          },
+          "communication": {
+            "status": "accepted",
+            "score": 4,
+            "confidence": 0.8,
+            "evidenceMessageIds": [
+              "m01-009",
+              "m01-021"
+            ],
+            "rationale": "Made clear tactical requests and objective callouts.",
+            "reasons": []
+          }
+        }
+      }
+    },
+    {
+      "matchId": "match_02",
+      "date": "2026-11-02",
+      "responseRejected": false,
+      "responseReason": null,
+      "players": {
+        "p1": {
+          "respect": {
+            "status": "accepted",
+            "score": 4,
+            "confidence": 0.9,
+            "evidenceMessageIds": [
+              "m02-001",
+              "m02-028"
+            ],
+            "rationale": "Maintained a positive and sportsmanlike attitude despite being targeted by teammate abuse.",
+            "reasons": []
+          },
+          "teamwork": {
+            "status": "accepted",
+            "score": 4,
+            "confidence": 0.9,
+            "evidenceMessageIds": [
+              "m02-009",
+              "m02-013",
+              "m02-022"
+            ],
+            "rationale": "Consistently offered to watch flanks, supported pushes, and encouraged group coordination.",
+            "reasons": []
+          },
+          "communication": {
+            "status": "accepted",
+            "score": 4,
+            "confidence": 0.9,
+            "evidenceMessageIds": [
+              "m02-009",
+              "m02-022"
+            ],
+            "rationale": "Provided clear tactical intent and helpful team calls.",
+            "reasons": []
+          }
+        },
+        "p2": {
+          "respect": {
+            "status": "accepted",
+            "score": 1,
+            "confidence": 0.95,
+            "evidenceMessageIds": [
+              "m02-003",
+              "m02-010",
+              "m02-026"
+            ],
+            "rationale": "Repeatedly insulted and belittled a specific teammate throughout the match.",
+            "reasons": []
+          },
+          "teamwork": {
+            "status": "accepted",
+            "score": 2,
+            "confidence": 0.8,
+            "evidenceMessageIds": [
+              "m02-003",
+              "m02-016"
+            ],
+            "rationale": "Undermined team cohesion by constantly putting down a teammate instead of cooperating.",
+            "reasons": []
+          },
+          "communication": {
+            "status": "accepted",
+            "score": 2,
+            "confidence": 0.8,
+            "evidenceMessageIds": [
+              "m02-010",
+              "m02-016",
+              "m02-026"
+            ],
+            "rationale": "Used chat primarily for hostile remarks rather than useful information.",
+            "reasons": []
+          }
+        },
+        "p5": {
+          "respect": {
+            "status": "accepted",
+            "score": 3,
+            "confidence": 0.8,
+            "evidenceMessageIds": [],
+            "rationale": "Maintained neutral interactions while focused on match objectives.",
+            "reasons": []
+          },
+          "teamwork": {
+            "status": "accepted",
+            "score": 4,
+            "confidence": 0.9,
+            "evidenceMessageIds": [
+              "m02-011",
+              "m02-021"
+            ],
+            "rationale": "Actively called for pushes and led team coordination towards objectives.",
+            "reasons": []
+          },
+          "communication": {
+            "status": "accepted",
+            "score": 4,
+            "confidence": 0.85,
+            "evidenceMessageIds": [
+              "m02-011",
+              "m02-021"
+            ],
+            "rationale": "Delivered clear calls to push and close out the match.",
+            "reasons": []
+          }
+        },
+        "p6": {
+          "respect": {
+            "status": "accepted",
+            "score": 2,
+            "confidence": 0.9,
+            "evidenceMessageIds": [
+              "m02-004",
+              "m02-012",
+              "m02-020"
+            ],
+            "rationale": "Expressed hostility towards teammates and frequently berated their skill level.",
+            "reasons": []
+          },
+          "teamwork": {
+            "status": "accepted",
+            "score": 2,
+            "confidence": 0.85,
+            "evidenceMessageIds": [
+              "m02-012",
+              "m02-020",
+              "m02-027"
+            ],
+            "rationale": "Exhibited a defeatist attitude, insulting teammates and claiming to give up on cooperation.",
+            "reasons": []
+          },
+          "communication": {
+            "status": "accepted",
+            "score": 2,
+            "confidence": 0.8,
+            "evidenceMessageIds": [
+              "m02-004",
+              "m02-020",
+              "m02-027"
+            ],
+            "rationale": "Contributed complaints and insults instead of constructive game communication.",
+            "reasons": []
+          }
+        },
+        "p3": {
+          "respect": {
+            "status": "accepted",
+            "score": 3,
+            "confidence": 0.8,
+            "evidenceMessageIds": [],
+            "rationale": "Engaged in light party banter with a group member that remained mutual and non-abusive.",
+            "reasons": []
+          },
+          "teamwork": {
+            "status": "accepted",
+            "score": 4,
+            "confidence": 0.85,
+            "evidenceMessageIds": [
+              "m02-025"
+            ],
+            "rationale": "Cooperated with the team and communicated strategic rotations effectively.",
+            "reasons": []
+          },
+          "communication": {
+            "status": "accepted",
+            "score": 4,
+            "confidence": 0.85,
+            "evidenceMessageIds": [
+              "m02-025"
+            ],
+            "rationale": "Provided useful movement and rotation calls for the team.",
+            "reasons": []
+          }
+        },
+        "p4": {
+          "respect": {
+            "status": "accepted",
+            "score": 3,
+            "confidence": 0.8,
+            "evidenceMessageIds": [],
+            "rationale": "Participated in friendly party banter that was met with mutual joking rather than offense.",
+            "reasons": []
+          },
+          "teamwork": {
+            "status": "accepted",
+            "score": 3,
+            "confidence": 0.7,
+            "evidenceMessageIds": [],
+            "rationale": "Played normally without notable cooperative or disruptive actions beyond casual banter.",
+            "reasons": []
+          },
+          "communication": {
+            "status": "accepted",
+            "score": 3,
+            "confidence": 0.7,
+            "evidenceMessageIds": [],
+            "rationale": "Chat consisted mainly of party banter without significant tactical calls.",
+            "reasons": []
+          }
+        },
+        "p7": {
+          "respect": {
+            "status": "accepted",
+            "score": 3,
+            "confidence": 0.8,
+            "evidenceMessageIds": [],
+            "rationale": "Expressed mild general frustration but remained overall neutral and polite at the end.",
+            "reasons": []
+          },
+          "teamwork": {
+            "status": "needs_review",
+            "score": 4,
+            "confidence": 0.85,
+            "evidenceMessageIds": [
+              "m02-014",
+              "m02-23"
+            ],
+            "rationale": "Requested cover appropriately and acknowledged successful team plays.",
+            "reasons": [
+              "evidence m02-23 is not a message in match_02"
+            ]
+          },
+          "communication": {
+            "status": "accepted",
+            "score": 4,
+            "confidence": 0.85,
+            "evidenceMessageIds": [
+              "m02-014"
+            ],
+            "rationale": "Made helpful tactical requests for backup and team positioning.",
+            "reasons": []
+          }
+        },
+        "p8": {
+          "respect": {
+            "status": "accepted",
+            "score": 3,
+            "confidence": 0.8,
+            "evidenceMessageIds": [],
+            "rationale": "Responded to instructions and system prompts without engaging in personal abuse.",
+            "reasons": []
+          },
+          "teamwork": {
+            "status": "accepted",
+            "score": 4,
+            "confidence": 0.85,
+            "evidenceMessageIds": [
+              "m02-015",
+              "m02-024"
+            ],
+            "rationale": "Responded to teammate requests for backup and communicated supply needs.",
+            "reasons": []
+          },
+          "communication": {
+            "status": "accepted",
+            "score": 3,
+            "confidence": 0.8,
+            "evidenceMessageIds": [
+              "m02-015",
+              "m02-024"
+            ],
+            "rationale": "Provided standard operational messages regarding positioning and resources.",
+            "reasons": []
+          }
+        }
+      }
+    },
+    {
+      "matchId": "match_03",
+      "date": "2026-11-03",
+      "responseRejected": false,
+      "responseReason": null,
+      "players": {
+        "p1": {
+          "respect": {
+            "status": "accepted",
+            "score": 4,
+            "confidence": 0.9,
+            "evidenceMessageIds": [
+              "m03-011",
+              "m03-023",
+              "m03-029"
+            ],
+            "rationale": "Encouraged teammates and promoted positive sportsmanship throughout the match.",
+            "reasons": []
+          },
+          "teamwork": {
+            "status": "accepted",
+            "score": 4,
+            "confidence": 0.8,
+            "evidenceMessageIds": [
+              "m03-002",
+              "m03-011",
+              "m03-023"
+            ],
+            "rationale": "Offered support, covered teammates, and focused on working together.",
+            "reasons": []
+          },
+          "communication": {
+            "status": "accepted",
+            "score": 4,
+            "confidence": 0.8,
+            "evidenceMessageIds": [
+              "m03-002",
+              "m03-011"
+            ],
+            "rationale": "Provided clear intent and constructive feedback to team members.",
+            "reasons": []
+          }
+        },
+        "p2": {
+          "respect": {
+            "status": "accepted",
+            "score": 1,
+            "confidence": 0.95,
+            "evidenceMessageIds": [
+              "m03-004",
+              "m03-013",
+              "m03-022"
+            ],
+            "rationale": "Repeatedly insulted and belittled a teammate.",
+            "reasons": []
+          },
+          "teamwork": {
+            "status": "accepted",
+            "score": 1,
+            "confidence": 0.9,
+            "evidenceMessageIds": [
+              "m03-004",
+              "m03-013",
+              "m03-022"
+            ],
+            "rationale": "Blamed and undermined teammates instead of cooperating.",
+            "reasons": []
+          },
+          "communication": {
+            "status": "accepted",
+            "score": 2,
+            "confidence": 0.85,
+            "evidenceMessageIds": [
+              "m03-004",
+              "m03-013",
+              "m03-022"
+            ],
+            "rationale": "Sent hostile and unhelpful messages.",
+            "reasons": []
+          }
+        },
+        "p7": {
+          "respect": {
+            "status": "accepted",
+            "score": 4,
+            "confidence": 0.85,
+            "evidenceMessageIds": [
+              "m03-014"
+            ],
+            "rationale": "Expressed gratitude and acknowledged teammates positively.",
+            "reasons": []
+          },
+          "teamwork": {
+            "status": "accepted",
+            "score": 4,
+            "confidence": 0.85,
+            "evidenceMessageIds": [
+              "m03-003",
+              "m03-024"
+            ],
+            "rationale": "Assumed roles willingly and owned up to mistakes constructively.",
+            "reasons": []
+          },
+          "communication": {
+            "status": "accepted",
+            "score": 4,
+            "confidence": 0.8,
+            "evidenceMessageIds": [
+              "m03-003",
+              "m03-024"
+            ],
+            "rationale": "Shared useful intentions and took accountability for plays.",
+            "reasons": []
+          }
+        },
+        "p8": {
+          "respect": {
+            "status": "accepted",
+            "score": 4,
+            "confidence": 0.85,
+            "evidenceMessageIds": [
+              "m03-017",
+              "m03-027"
+            ],
+            "rationale": "Tried to de-escalate toxicity and maintained good sportsmanship.",
+            "reasons": []
+          },
+          "teamwork": {
+            "status": "accepted",
+            "score": 4,
+            "confidence": 0.8,
+            "evidenceMessageIds": [
+              "m03-009",
+              "m03-017"
+            ],
+            "rationale": "Made callouts and encouraged the team to focus on the objective.",
+            "reasons": []
+          },
+          "communication": {
+            "status": "accepted",
+            "score": 4,
+            "confidence": 0.8,
+            "evidenceMessageIds": [
+              "m03-009",
+              "m03-017"
+            ],
+            "rationale": "Gave helpful tactical updates and promoted clean communication.",
+            "reasons": []
+          }
+        },
+        "p3": {
+          "respect": {
+            "status": "accepted",
+            "score": 3,
+            "confidence": 0.7,
+            "evidenceMessageIds": [],
+            "rationale": "Engaged in light party banter that was reciprocated by friends.",
+            "reasons": []
+          },
+          "teamwork": {
+            "status": "accepted",
+            "score": 3,
+            "confidence": 0.7,
+            "evidenceMessageIds": [],
+            "rationale": "Participated normally with the team without notable issues.",
+            "reasons": []
+          },
+          "communication": {
+            "status": "accepted",
+            "score": 3,
+            "confidence": 0.7,
+            "evidenceMessageIds": [],
+            "rationale": "Communicated casually within the party group.",
+            "reasons": []
+          }
+        },
+        "p4": {
+          "respect": {
+            "status": "accepted",
+            "score": 3,
+            "confidence": 0.7,
+            "evidenceMessageIds": [],
+            "rationale": "Exchanged playful banter with a party member without reports.",
+            "reasons": []
+          },
+          "teamwork": {
+            "status": "accepted",
+            "score": 3,
+            "confidence": 0.7,
+            "evidenceMessageIds": [],
+            "rationale": "Played along with team dynamics without disruption.",
+            "reasons": []
+          },
+          "communication": {
+            "status": "accepted",
+            "score": 3,
+            "confidence": 0.7,
+            "evidenceMessageIds": [],
+            "rationale": "Used chat primarily for party banter.",
+            "reasons": []
+          }
+        },
+        "p5": {
+          "respect": {
+            "status": "accepted",
+            "score": 4,
+            "confidence": 0.8,
+            "evidenceMessageIds": [
+              "m03-030"
+            ],
+            "rationale": "Maintained an upbeat attitude and praised team performance at the end.",
+            "reasons": []
+          },
+          "teamwork": {
+            "status": "accepted",
+            "score": 4,
+            "confidence": 0.8,
+            "evidenceMessageIds": [
+              "m03-007",
+              "m03-020"
+            ],
+            "rationale": "Called for coordinated pushes and motivated the team.",
+            "reasons": []
+          },
+          "communication": {
+            "status": "accepted",
+            "score": 4,
+            "confidence": 0.8,
+            "evidenceMessageIds": [
+              "m03-007",
+              "m03-020"
+            ],
+            "rationale": "Provided clear tactical directions and rallying calls.",
+            "reasons": []
+          }
+        },
+        "p6": {
+          "respect": {
+            "status": "accepted",
+            "score": 1,
+            "confidence": 0.95,
+            "evidenceMessageIds": [
+              "m03-010",
+              "m03-016",
+              "m03-025"
+            ],
+            "rationale": "Repeatedly targeted and harassed an opposing player with hostile remarks.",
+            "reasons": []
+          },
+          "teamwork": {
+            "status": "needs_review",
+            "score": 3,
+            "confidence": 0.6,
+            "evidenceMessageIds": [],
+            "rationale": "Focused on chatting rather than disrupting internal team cooperation.",
+            "reasons": [
+              "confidence 0.6 is below 0.7"
+            ]
+          },
+          "communication": {
+            "status": "accepted",
+            "score": 2,
+            "confidence": 0.8,
+            "evidenceMessageIds": [
+              "m03-010",
+              "m03-016",
+              "m03-025"
+            ],
+            "rationale": "Included frequent toxic and abusive statements in chat.",
+            "reasons": []
+          }
+        }
+      }
+    },
+    {
+      "matchId": "match_04",
+      "date": "2026-11-04",
+      "responseRejected": false,
+      "responseReason": null,
+      "players": {
+        "p1": {
+          "respect": {
+            "status": "accepted",
+            "score": 4,
+            "confidence": 0.8,
+            "evidenceMessageIds": [
+              "m04-022"
+            ],
+            "rationale": "Player maintained a positive and encouraging attitude towards teammates.",
+            "reasons": []
+          },
+          "teamwork": {
+            "status": "accepted",
+            "score": 4,
+            "confidence": 0.8,
+            "evidenceMessageIds": [
+              "m04-022"
+            ],
+            "rationale": "Appreciated cooperative play and encouraged good teamwork.",
+            "reasons": []
+          },
+          "communication": {
+            "status": "accepted",
+            "score": 4,
+            "confidence": 0.8,
+            "evidenceMessageIds": [
+              "m04-012",
+              "m04-022"
+            ],
+            "rationale": "Communicated constructively and acknowledged teammates' calls.",
+            "reasons": []
+          }
+        },
+        "p2": {
+          "respect": {
+            "status": "accepted",
+            "score": 1,
+            "confidence": 0.9,
+            "evidenceMessageIds": [
+              "m04-005",
+              "m04-013"
+            ],
+            "rationale": "Targeted a teammate with repeated insults and hostility.",
+            "reasons": []
+          },
+          "teamwork": {
+            "status": "accepted",
+            "score": 2,
+            "confidence": 0.8,
+            "evidenceMessageIds": [
+              "m04-005",
+              "m04-013"
+            ],
+            "rationale": "Blamed and belittled a teammate instead of supporting them.",
+            "reasons": []
+          },
+          "communication": {
+            "status": "accepted",
+            "score": 2,
+            "confidence": 0.8,
+            "evidenceMessageIds": [
+              "m04-005",
+              "m04-013"
+            ],
+            "rationale": "Used chat primarily for hostility rather than useful calls.",
+            "reasons": []
+          }
+        },
+        "p5": {
+          "respect": {
+            "status": "accepted",
+            "score": 3,
+            "confidence": 0.7,
+            "evidenceMessageIds": [],
+            "rationale": "Used standard game terminology without hostility.",
+            "reasons": []
+          },
+          "teamwork": {
+            "status": "accepted",
+            "score": 4,
+            "confidence": 0.8,
+            "evidenceMessageIds": [
+              "m04-017",
+              "m04-028"
+            ],
+            "rationale": "Motivated the team towards objectives and final pushes.",
+            "reasons": []
+          },
+          "communication": {
+            "status": "accepted",
+            "score": 4,
+            "confidence": 0.8,
+            "evidenceMessageIds": [
+              "m04-006",
+              "m04-017"
+            ],
+            "rationale": "Provided clear game-oriented motivation.",
+            "reasons": []
+          }
+        },
+        "p7": {
+          "respect": {
+            "status": "accepted",
+            "score": 5,
+            "confidence": 0.9,
+            "evidenceMessageIds": [
+              "m04-001",
+              "m04-016",
+              "m04-026"
+            ],
+            "rationale": "Consistently polite, encouraging, and supportive of teammates.",
+            "reasons": []
+          },
+          "teamwork": {
+            "status": "accepted",
+            "score": 5,
+            "confidence": 0.9,
+            "evidenceMessageIds": [
+              "m04-011",
+              "m04-016",
+              "m04-026"
+            ],
+            "rationale": "Offered cover, praised good shots, and thanked teammates.",
+            "reasons": []
+          },
+          "communication": {
+            "status": "accepted",
+            "score": 5,
+            "confidence": 0.9,
+            "evidenceMessageIds": [
+              "m04-001",
+              "m04-011",
+              "m04-023"
+            ],
+            "rationale": "Provided clear tactical offers and maintained positive sportsmanship.",
+            "reasons": []
+          }
+        },
+        "p3": {
+          "respect": {
+            "status": "accepted",
+            "score": 4,
+            "confidence": 0.8,
+            "evidenceMessageIds": [
+              "m04-007",
+              "m04-019"
+            ],
+            "rationale": "Engaged in positive encouragement with party friends.",
+            "reasons": []
+          },
+          "teamwork": {
+            "status": "accepted",
+            "score": 4,
+            "confidence": 0.7,
+            "evidenceMessageIds": [
+              "m04-019"
+            ],
+            "rationale": "Supported and praised teammates for good plays.",
+            "reasons": []
+          },
+          "communication": {
+            "status": "needs_review",
+            "score": 3,
+            "confidence": 0.6,
+            "evidenceMessageIds": [],
+            "rationale": "Kept communication standard with light banter.",
+            "reasons": [
+              "confidence 0.6 is below 0.7"
+            ]
+          }
+        },
+        "p4": {
+          "respect": {
+            "status": "accepted",
+            "score": 3,
+            "confidence": 0.8,
+            "evidenceMessageIds": [],
+            "rationale": "Participated in friendly party banter without crossing lines.",
+            "reasons": []
+          },
+          "teamwork": {
+            "status": "accepted",
+            "score": 3,
+            "confidence": 0.7,
+            "evidenceMessageIds": [],
+            "rationale": "Normal participation with no notable teamwork events.",
+            "reasons": []
+          },
+          "communication": {
+            "status": "accepted",
+            "score": 3,
+            "confidence": 0.7,
+            "evidenceMessageIds": [],
+            "rationale": "Sent casual chat messages appropriate to the party.",
+            "reasons": []
+          }
+        },
+        "p6": {
+          "respect": {
+            "status": "accepted",
+            "score": 2,
+            "confidence": 0.9,
+            "evidenceMessageIds": [
+              "m04-010",
+              "m04-018"
+            ],
+            "rationale": "Repeatedly insulted a teammate despite polite-sounding bookends.",
+            "reasons": []
+          },
+          "teamwork": {
+            "status": "accepted",
+            "score": 2,
+            "confidence": 0.8,
+            "evidenceMessageIds": [
+              "m04-018"
+            ],
+            "rationale": "Abandoned constructive collaboration and blamed teammates.",
+            "reasons": []
+          },
+          "communication": {
+            "status": "accepted",
+            "score": 2,
+            "confidence": 0.7,
+            "evidenceMessageIds": [
+              "m04-010",
+              "m04-018"
+            ],
+            "rationale": "Mixed polite closing phrases with hostile insults.",
+            "reasons": []
+          }
+        },
+        "p8": {
+          "respect": {
+            "status": "accepted",
+            "score": 3,
+            "confidence": 0.7,
+            "evidenceMessageIds": [],
+            "rationale": "Maintained neutral respect levels despite prompt injection attempts.",
+            "reasons": []
+          },
+          "teamwork": {
+            "status": "accepted",
+            "score": 4,
+            "confidence": 0.8,
+            "evidenceMessageIds": [
+              "m04-015"
+            ],
+            "rationale": "Provided clear rotation calls to coordinate with the team.",
+            "reasons": []
+          },
+          "communication": {
+            "status": "accepted",
+            "score": 4,
+            "confidence": 0.8,
+            "evidenceMessageIds": [
+              "m04-015"
+            ],
+            "rationale": "Delivered useful and concise tactical callouts.",
+            "reasons": []
+          }
+        }
+      }
+    }
+  ]
+}

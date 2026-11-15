@@ -1,6 +1,7 @@
 // Builds the player-facing profile (D2–D7) from per-match results, challenges and guidance.
 // Returns codes and data only; all wording lives in client/src/copy.ts.
 import type { MatchData, PlayerInfo } from "../data.js";
+import { isSimulated } from "../demo/overrides.js";
 import { buildProfiles, exclusionKey } from "../scoring/aggregate.js";
 import { toValidationResults, type MatchResultsFile } from "../scoring/results.js";
 import { DIMENSIONS, type Dimension } from "../scoring/types.js";
@@ -16,6 +17,7 @@ export interface LoweringMatch {
   date: string;
   score: number; // 1 or 2
   counted: boolean; // false once overturned on review
+  simulated: boolean; // M7: a demo-only simulated AI error, not a real model output
   review: { challengeId: string; status: ChallengeStatus; reviewerComment: string | null } | null;
   canChallenge: boolean;
   evidence: EvidenceLine[]; // up to 3, real chat lines from the data files
@@ -61,6 +63,15 @@ function latestChallenge(challenges: Challenge[], playerId: string, dim: Dimensi
     .at(-1);
 }
 
+/** D5: overturned → excluded from aggregation (latest challenge per player + dimension + match). Upheld and pending still count. */
+export function overturnedExclusions(challenges: Challenge[]): Set<string> {
+  return new Set(
+    challenges
+      .filter((c) => latestChallenge(challenges, c.playerId, c.dimension, c.matchId)?.status === "overturned")
+      .map((c) => exclusionKey(c.matchId, c.playerId, c.dimension))
+  );
+}
+
 export function buildPlayerProfile(playerId: string, deps: ProfileDeps): PlayerProfileView | null {
   const player = deps.players.find((p) => p.id === playerId);
   if (!player) return null;
@@ -68,12 +79,7 @@ export function buildPlayerProfile(playerId: string, deps: ProfileDeps): PlayerP
   const ordered = [...deps.matches].sort((a, b) => a.date.localeCompare(b.date));
   const mine = deps.challenges.filter((c) => c.playerId === playerId);
 
-  // D5: overturned → excluded from aggregation. Upheld and pending still count.
-  const excluded = new Set(
-    mine
-      .filter((c) => latestChallenge(mine, playerId, c.dimension, c.matchId)?.status === "overturned")
-      .map((c) => exclusionKey(c.matchId, playerId, c.dimension))
-  );
+  const excluded = overturnedExclusions(mine);
   const agg = buildProfiles([player], ordered, toValidationResults(deps.results), excluded)[0];
 
   const dimensions = DIMENSIONS.map((dim): DimensionView => {
@@ -92,6 +98,7 @@ export function buildPlayerProfile(playerId: string, deps: ProfileDeps): PlayerP
         date: m.date,
         score: r.score,
         counted: c?.status !== "overturned",
+        simulated: isSimulated(r),
         review: c ? { challengeId: c.id, status: c.status, reviewerComment: c.reviewerComment } : null,
         canChallenge: !c, // one challenge per score: pending is open; upheld and overturned are final
         evidence: deps.evidence.lines(r.evidenceMessageIds).slice(0, MAX_EVIDENCE_LINES),

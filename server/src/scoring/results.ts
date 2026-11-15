@@ -8,6 +8,8 @@ import { DIMENSIONS, type Dimension, type MatchValidationResult, type Validation
 
 export const OUTPUT_DIR = path.join(REPO_ROOT, "output");
 export const MATCH_RESULTS_PATH = path.join(OUTPUT_DIR, "match-results.json");
+/** Live run 4 (gemini-3.5-flash-lite), committed so a fresh clone shows the tested demo without a key. */
+export const DEMO_SNAPSHOT_PATH = path.join(REPO_ROOT, "data", "demo", "run4-match-results.json");
 
 export interface DimensionResult {
   status: ValidationStatus;
@@ -95,12 +97,25 @@ export async function scoreWithMock(): Promise<MatchResultsFile> {
   return toMatchResults(log, matches, { generatedAt: new Date().toISOString(), provider: "mock", model: null });
 }
 
-/** D1: load output/match-results.json; if missing, score with the mock provider in memory. */
-export async function loadMatchResults(log: (line: string) => void = console.log): Promise<MatchResultsFile> {
-  if (fs.existsSync(MATCH_RESULTS_PATH)) {
-    const file = JSON.parse(fs.readFileSync(MATCH_RESULTS_PATH, "utf8")) as MatchResultsFile;
-    log(`Loaded scoring output: ${path.relative(REPO_ROOT, MATCH_RESULTS_PATH)} (provider ${file.provider}${file.model ? `, model ${file.model}` : ""})`);
-    return file;
+/**
+ * D1 (revised for 2A): load order is
+ *   1. output/match-results.json            (your latest `npm run score`)
+ *   2. data/demo/run4-match-results.json    (committed live run 4 snapshot)
+ *   3. mock results, scored in memory       (no key, no network)
+ * The source used is logged at startup. Never calls the LLM.
+ */
+export async function loadMatchResults(
+  log: (line: string) => void = console.log,
+  paths: { output: string; snapshot: string } = { output: MATCH_RESULTS_PATH, snapshot: DEMO_SNAPSHOT_PATH }
+): Promise<MatchResultsFile> {
+  for (const [label, file] of [
+    ["scoring output", paths.output],
+    ["committed demo snapshot", paths.snapshot],
+  ] as const) {
+    if (!fs.existsSync(file)) continue;
+    const results = JSON.parse(fs.readFileSync(file, "utf8")) as MatchResultsFile;
+    log(`Loaded ${label}: ${path.relative(REPO_ROOT, file)} (provider ${results.provider}${results.model ? `, model ${results.model}` : ""})`);
+    return results;
   }
   log("No scoring output found; using mock results");
   return scoreWithMock();
