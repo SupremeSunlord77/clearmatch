@@ -113,7 +113,7 @@ export function ReviewPage() {
 
   return (
     <>
-      <DemoBar onReset={load}>
+      <DemoBar onChanged={load}>
         <a href="/">{copy.demo.backToProfile}</a>
       </DemoBar>
       <main>

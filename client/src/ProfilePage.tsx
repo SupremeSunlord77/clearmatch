@@ -33,7 +33,7 @@ export function ProfilePage() {
 
   return (
     <>
-      <DemoBar onReset={load}>
+      <DemoBar onChanged={load}>
         <label>
           {copy.demo.switchPlayer}{" "}
           <select value={playerId} onChange={(e) => setPlayerId(e.target.value)}>
@@ -55,6 +55,9 @@ export function ProfilePage() {
             <header className="profile-head">
               <h1>{copy.profile.title(profile.displayName)}</h1>
               <p className="private">{copy.profile.privateNote}</p>
+              <a className="button-link" href={`/lobby?player=${encodeURIComponent(profile.playerId)}`}>
+                {copy.lobby.findNextMatch}
+              </a>
             </header>
             {profile.dimensions.map((d) => (
               <DimensionCard key={`${profile.playerId}-${d.dimension}`} d={d} playerId={profile.playerId} onChanged={load} />

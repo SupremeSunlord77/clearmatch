@@ -41,6 +41,10 @@ main {
   border: 1px solid #bf8700;
   padding: 0 6px;
 }
+.demo-active {
+  border: 2px solid #bf8700;
+  padding: 0 6px;
+}
 .demo-message {
   color: var(--muted);
 }
@@ -186,6 +190,36 @@ textarea {
 textarea {
   width: 100%;
   box-sizing: border-box;
+}
+
+.button-link {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 4px 12px;
+  border: 1px solid var(--text);
+  border-radius: 4px;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+}
+.teams {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+.team h2 {
+  margin: 0 0 4px;
+  font-size: 1.1rem;
+}
+.team ul {
+  margin: 0;
+  padding-left: 20px;
+}
+.team-yours {
+  border-width: 2px;
+}
+.marker {
+  color: var(--muted);
 }
 
 .how {

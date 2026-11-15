@@ -12,6 +12,10 @@ export const copy = {
     reset: "Reset demo",
     resetting: "Resetting…",
     resetDone: (n: number) => `Demo reset: ${n} challenge${n === 1 ? "" : "s"} cleared.`,
+    simulateError: "Simulate an AI error",
+    simulating: "Simulating…",
+    simulateErrorActive: "Demo control: simulated AI error active",
+    simulateErrorAlready: "The simulated AI error is already active.",
   },
 
   common: {
@@ -87,6 +91,29 @@ export const copy = {
     sending: "Sending…",
     cancel: "Cancel",
     needReason: "Please choose a reason.",
+  },
+
+  lobby: {
+    findNextMatch: "Find next match",
+    title: "Your next match",
+    privateNote: "Only you can see why you're in this lobby. Other players see names only.",
+    team: (t: string) => `Team ${t}`,
+    you: "(you)",
+    yourParty: "(your party)",
+    whyHeading: "Why you're in this lobby",
+    // One line per reason code from the server (M4). Only the viewer's own situation; never other players' data.
+    reasons: {
+      party_together: (names: string[]) =>
+        names.length === 1 ? `Your party friend ${names[0]} is on your team.` : `Your party (${names.join(", ")}) is on your team.`,
+      protected_from_reports: "Players you recently muted or reported are not on your team.",
+      kept_apart_from_targets: "Because you were recently muted or reported, you are not placed with the players involved.",
+      low_respect_spread: "Your Respect is currently Low, so you're on a team with no other low-Respect players.",
+      own_respect_low:
+        "Your Respect is currently Low. When possible, teams are arranged so no team has more than one player with low Respect.",
+      balanced_teamwork: "Teams were balanced by teamwork.",
+      constraint_relaxed: "This time not every fairness rule could be met.",
+    },
+    changeNote: "Lobbies use your current profile — if a challenge changes your profile, your next lobby can change.",
   },
 
   howItWorks: {

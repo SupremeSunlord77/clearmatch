@@ -1,7 +1,10 @@
+import { LobbyPage } from "./LobbyPage";
 import { ProfilePage } from "./ProfilePage";
 import { ReviewPage } from "./ReviewPage";
 
-// Two pages, chosen by path; plain links move between them (no router library).
+// Three pages, chosen by path; plain links move between them (no router library).
 export default function App() {
-  return location.pathname.startsWith("/review") ? <ReviewPage /> : <ProfilePage />;
+  if (location.pathname.startsWith("/review")) return <ReviewPage />;
+  if (location.pathname.startsWith("/lobby")) return <LobbyPage />;
+  return <ProfilePage />;
 }

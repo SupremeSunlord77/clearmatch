@@ -22,6 +22,7 @@ export interface LoweringMatch {
   date: string;
   score: number;
   counted: boolean;
+  simulated: boolean; // demo-only simulated AI error
   review: { challengeId: string; status: ReviewStatus; reviewerComment: string | null } | null;
   canChallenge: boolean;
   evidence: EvidenceLine[];
@@ -58,8 +59,32 @@ export interface ReviewItem {
   reason: string;
   note: string | null;
   status: ReviewStatus;
-  proposal: { score: number | null; confidence: number | null; aiSummary: string | null } | null;
+  proposal: { score: number | null; confidence: number | null; aiSummary: string | null; simulated: boolean } | null;
   evidence: { line: EvidenceLine; before: EvidenceLine[]; after: EvidenceLine[] }[];
+}
+
+export type ReasonCode =
+  | "party_together"
+  | "protected_from_reports"
+  | "kept_apart_from_targets"
+  | "low_respect_spread"
+  | "own_respect_low"
+  | "balanced_teamwork"
+  | "constraint_relaxed";
+
+export interface LobbyMember {
+  displayName: string;
+  you: boolean;
+  yourParty: boolean;
+}
+
+/** Private to the viewing player: names only, their own reasons. */
+export interface Lobby {
+  playerId: string;
+  yourTeam: "A" | "B";
+  teams: { A: LobbyMember[]; B: LobbyMember[] };
+  reasons: ReasonCode[];
+  partyMemberNames: string[];
 }
 
 async function call<T>(url: string, init?: RequestInit): Promise<T> {
@@ -79,7 +104,10 @@ export const api = {
   pending: () => call<ReviewItem[]>("/api/challenges?status=pending"),
   decide: (id: string, decision: "upheld" | "overturned", comment?: string) =>
     post(`/api/challenges/${encodeURIComponent(id)}/decision`, { decision, comment }),
-  reset: () => post<{ cleared: number }>("/api/demo/reset"),
+  lobby: (playerId: string) => call<Lobby>(`/api/lobby/${encodeURIComponent(playerId)}`),
+  demoStatus: () => call<{ simulatedAiErrorActive: boolean }>("/api/demo/status"),
+  simulateAiError: () => post<{ added: number; simulatedAiErrorActive: boolean }>("/api/demo/simulate-ai-error"),
+  reset: () => post<{ cleared: number; overridesCleared: number }>("/api/demo/reset"),
 };
 
 export const MAX_NOTE_CHARS = 200;

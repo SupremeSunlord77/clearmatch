@@ -67,7 +67,7 @@ The server runs at http://localhost:3001 (http://localhost:3001/api/health retur
 
 **Reset the demo.** Click "Reset demo" in the demo bar. This clears all challenges (saved in `output/challenges.json`) and returns every profile to its original state.
 
-**Run the tests yourself.** [docs/testing-guide.md](docs/testing-guide.md) explains how to run the automated tests, the scoring runs and the browser walkthrough in VS Code.
+**Run the tests.** Run `npm test` (no API key needed). It checks the validator, score aggregation and trends, provider retries, the profile and challenge rules, and matchmaking (constraints, relaxation, privacy of lobby reasons and the simulated AI error).
 
 ## Supplying your own API key
 <!-- How a reviewer supplies their own key; none is included. -->
