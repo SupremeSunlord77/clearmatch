@@ -13,7 +13,7 @@ The authoritative scope is in [docs/scope.md](docs/scope.md).
 
 Implemented
 - An AI scores each player's behaviour profile (Respect, Teamwork, Communication) from their chat history, returning structured JSON: score, confidence, and the message IDs used as evidence.
-- A validator checks the AI output. Invalid output, made-up message IDs, or low confidence go to human review instead of the player. Temporary provider errors are retried, and failures are recorded honestly.
+- A validator checks the AI output. Invalid output, made-up message IDs, or low confidence are held back from the player's score and marked as awaiting review. Temporary provider errors are retried, and failures are recorded honestly.
 - A private profile screen shows each score with a word label and trend, the matches that lowered it, the exact chat lines behind it, and a labelled AI summary. Low or declining scores open automatically; others stay collapsed.
 - Each score comes with improvement tips (drafted with AI assistance and reviewed by the designer), and the profile explains in plain words how it is worked out, without showing the formula.
 - A player can challenge one score in one match when that match scored 1 or 2. A reviewer upholds or overturns it: an overturned match no longer counts and the score is recalculated; an upheld decision is final and shows the reviewer's comment.
@@ -37,6 +37,7 @@ Planned (not built)
 - Chat restriction for low-Respect players.
 - A guided reflection with a coach chatbot that unlocks chat; the score recovers only through later behaviour.
 - Reports between party members weighted less in scoring, so joke reports between friends do not lower a friend's score.
+- A reviewer queue for AI scores the model was unsure about (the demo reviewer handles player challenges only).
 
 ## Technology stack
 <!-- Each technology and what it does in this project. -->
