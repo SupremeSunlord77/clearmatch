@@ -11,7 +11,7 @@
     "build": "npm run build -w server && npm run build -w client",
     "score": "npm run score -w server",
     "test": "npm test -w server",
-    "demo": "node -e \"console.log('Demo mode not implemented yet (planned Day 5)')\""
+    "demo": "node scripts/demo.mjs"
   },
   "devDependencies": {
     "concurrently": "^9.1.2"

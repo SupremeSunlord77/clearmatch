@@ -17,7 +17,7 @@ Implemented
 - A private profile screen shows each score with a word label and trend, the matches that lowered it, the exact chat lines behind it, and a labelled AI summary. Low or declining scores open automatically; others stay collapsed.
 - Each score comes with improvement tips (drafted with AI assistance and reviewed by the designer), and the profile explains in plain words how it is worked out, without showing the formula.
 - A player can challenge one score in one match when that match scored 1 or 2. A reviewer upholds or overturns it: an overturned match no longer counts and the score is recalculated; an upheld decision is final and shows the reviewer's comment.
-- A simple matchmaking rule forms lobbies from profiles and explains privately to the player why they were placed in their lobby. Challenge outcomes change the next lobby.
+- A simple matchmaking rule forms lobbies from profiles and explains privately to the player why they were placed in their lobby. Challenge outcomes update the next lobby and its explanation; with only 8 players, the protection rules keep the same teams, so the explanation changes rather than the teammates.
 - A mock mode runs the whole demo without an API key.
 
 Simulated
@@ -34,6 +34,9 @@ Planned (not built)
 - Clearer dimension definitions, so the same message does not lower Respect and Communication at once.
 - A step that detects prompt-injection lines before they can be cited as evidence.
 - A long-term study of player trust, reliance and manipulation, and of player-base segmentation.
+- Chat restriction for low-Respect players.
+- A guided reflection with a coach chatbot that unlocks chat; the score recovers only through later behaviour.
+- Reports between party members weighted less in scoring, so joke reports between friends do not lower a friend's score.
 
 ## Technology stack
 <!-- Each technology and what it does in this project. -->
@@ -53,21 +56,37 @@ Prerequisites: Node.js 20.12 or later, npm, git.
 
 ```bash
 npm install
-cp .env.example .env
-npm run dev
+npm run demo
 ```
 
-The server runs at http://localhost:3001 (http://localhost:3001/api/health returns `{"status":"ok"}`); the client runs at the URL Vite prints (normally http://localhost:5173).
+`npm run demo` starts the server and the client (like `npm run dev`), prints the client URL (normally http://localhost:5173) and a short guide to the two demo stories below. No `.env` or API key is needed. Stop it with Ctrl+C. The server alone runs at http://localhost:3001 (`/api/health` returns `{"status":"ok"}`).
 
-**Scores used by the app.** The server reads the scores saved by the last `npm run score` in `output/match-results.json`. If that file does not exist, it logs "No scoring output found; using mock results" and uses the mock results instead, so the demo works without an API key. The LLM is never called while you use the app.
+**Scores used by the app.** The scores shown are from live run 4 (gemini-3.5-flash-lite), included in the repo as `data/demo/run4-match-results.json`. The server loads, in order: `output/match-results.json` (your own latest `npm run score`, if any), then that committed run 4 file, then mock results. It logs which one it used at startup. The LLM is never called while you use the app.
 
-**See a profile.** Open the client URL. The profile of the selected player is shown; use "View profile of" in the yellow "Demo control" bar to choose another player (or open `/?player=p1` … `/?player=p8`). Each dimension shows its score, band and trend, the matches that lowered it with the exact chat lines, and a "Challenge this score" button for match scores of 1 or 2.
+**Demo controls.** Everything in the yellow "Demo control" bar is demo-only: switching player, opening the simulated reviewer (`/review`), "Simulate an AI error" and "Reset demo". Reset demo clears all challenges and the simulated error, and returns every profile and lobby to its original state.
 
-**Review a challenge.** Click "Open simulated reviewer" in the demo bar (or open `/review`). Each pending challenge shows the AI's proposal, the evidence lines with surrounding messages, and the player's reason. Uphold or overturn it, then go back to the profile to see the result: an overturned match no longer counts and the score is recalculated.
+**Story 1: a real AI result, challenged and upheld (Brickwall, p7)**
+1. Open `/?player=p7` and click "Show details" on Respect. Match 1 lowered the score: see the exact chat lines, the AI summary, the improvement acknowledgement and the tips.
+2. Click "Challenge this score" on match 1, choose a reason, and submit. The match shows "Challenged — under review".
+3. Click "Open simulated reviewer". Read the evidence lines in context, add a comment, and click "Uphold score".
+4. Back on the profile, match 1 shows "Upheld on review" with the reviewer's comment; the score is unchanged and cannot be challenged again.
+5. Click "Find next match" to see both teams and "Why you're in this lobby".
 
-**Reset the demo.** Click "Reset demo" in the demo bar. This clears all challenges (saved in `output/challenges.json`) and returns every profile to its original state.
+**Story 2: a simulated AI error, challenged and overturned (Havoc, p5)**
+
+The AI error in this story is simulated: live run 4 produced no false positives, so a demo control injects one labelled error (Havoc's game language scored as threatening in match 3). Nothing in the real scoring pipeline changes.
+1. Click "Reset demo", open `/lobby?player=p5`, and note the teams and reasons.
+2. Click "Simulate an AI error". The bar shows "Demo control: simulated AI error active".
+3. Open `/?player=p5`. Respect is now Low, citing Havoc's game language ("gonna kill it this round", "destroy their base, let's go").
+4. Click "Find next match". Havoc's reasons now say their Respect is Low and that not every fairness rule could be met.
+5. Challenge match 3 with "It was game language, not abuse", open the simulated reviewer, and click "Overturn score".
+6. Back on the profile, match 3 no longer counts and Respect is recalculated to Neutral. Click "Find next match" again: the extra reasons are gone.
 
 **Run the tests.** Run `npm test` (no API key needed). It checks the validator, score aggregation and trends, provider retries, the profile and challenge rules, and matchmaking (constraints, relaxation, privacy of lobby reasons and the simulated AI error).
+
+### How matchmaking works
+
+The next match puts all 8 players into two teams of 4, so matching means choosing the team split. The server checks all 35 possible splits against three rules: party members play together; nobody is placed with a player they muted or reported in the last 4 matches, which protects targets (unless the two are in the same party now, because they chose to play together); and each team has at most one player with Low Respect. Spreading Low-Respect players avoids toxic teams and echo chambers; grouping them would need a much larger pool, so this is a deliberate trade-off. Among the splits that pass, it picks the one with the smallest difference in average Teamwork, with a fixed tie-break so results repeat. If no split passes, the Low-Respect rule is relaxed first, then the report rule; the party rule never is, and every player is told in general terms that not every rule could be met. Each dimension has one role: Respect decides grouping (protection), Teamwork decides balance (fairness), and Communication is not used, because in current results it overlaps with Respect and would punish the same messages twice (chat restriction is planned instead). Safety rules are deliberately put before balance. With only 8 players, the protection rules leave a single valid split, so challenges change a player's explanation rather than their teammates. At scale, the behaviour rules would filter candidate lobbies before skill-based matching (for example by rank), at the cost of longer queue times (planned, untested). Each player sees only their own reasons, never anyone else's scores, bands or reports.
 
 ## Supplying your own API key
 <!-- How a reviewer supplies their own key; none is included. -->
