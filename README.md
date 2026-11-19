@@ -6,6 +6,10 @@ README prose word count: TBC
 
 ## Repository and submitted version
 <!-- Release tag and commit hash added at submission. -->
+Repository: https://github.com/SupremeSunlord77/clearmatch
+
+Submitted version: release tag `v1.0`, commit `TBC` (added at submission).
+
 
 ## Project status
 <!-- What is implemented, simulated and planned; copied verbatim from docs/scope.md. -->
@@ -91,13 +95,41 @@ The next match puts all 8 players into two teams of 4, so matching means choosin
 
 ## Supplying your own API key
 <!-- How a reviewer supplies their own key; none is included. -->
-No API key is included in this repository. To use a live LLM, add your own key to `.env` (which is gitignored) and set `LLM_PROVIDER`. Mock mode (`LLM_PROVIDER=mock`) needs no key.
+No API key is included in this repository. The demo needs no key.
+
+To score the matches live with your own key, copy `.env.example` to `.env` (gitignored) and set `LLM_PROVIDER=gemini`, `LLM_MODEL` (e.g. `gemini-3.5-flash-lite`) and `GEMINI_API_KEY`. Run `npm run score`, then `npm run demo`. Live results can differ from run 4, so the two stories may not reproduce exactly. Mock mode (`LLM_PROVIDER=mock`) needs no key.
 
 ## Development record
 <!-- Significant changes, why, what was checked, commit links; full log in docs/development-log.md. -->
+The full record, with what was checked for each change, is in [docs/development-log.md](docs/development-log.md). The main stages:
+
+- **Direction (11 Nov).** Chose transparent behaviour-aware matchmaking over a moderation loop, a coach chatbot and an in-the-moment nudge, using a decision matrix. [164d258](https://github.com/SupremeSunlord77/clearmatch/commit/164d258)
+- **Scoring pipeline (12–13 Nov).** The model proposes scores as JSON; a validator rejects invented or misattributed evidence and low confidence; code calculates profiles. [d0b25ae](https://github.com/SupremeSunlord77/clearmatch/commit/d0b25ae)
+- **Changes from testing (13 Nov).** Trend threshold raised to ±1.0 after single-point flips [75f2605](https://github.com/SupremeSunlord77/clearmatch/commit/75f2605); retry added after every call to gemini-3.8-flash returned 503 [a4c0f3f](https://github.com/SupremeSunlord77/clearmatch/commit/a4c0f3f); prompt v2 added score anchors after run 2 never awarded a 5 and rewarded banter [a0cf488](https://github.com/SupremeSunlord77/clearmatch/commit/a0cf488). Live results improved from 6 to 7 of 8 expected outcomes ([test results](docs/test-results-day3.md)).
+- **Profile and challenges (13–14 Nov).** Evidence shown from the data only; overturned matches stop counting; upheld decisions are final. [956dc94](https://github.com/SupremeSunlord77/clearmatch/commit/956dc94), [33e08fa](https://github.com/SupremeSunlord77/clearmatch/commit/33e08fa)
+- **Matchmaking (14–15 Nov).** Safety rules before balance; private reasons. With 8 players the protection rule fixes the teams, so challenges change the explanation, not the teammates. Live run 4 committed so markers see the tested demo. [5d59a5e](https://github.com/SupremeSunlord77/clearmatch/commit/5d59a5e), [2c7035b](https://github.com/SupremeSunlord77/clearmatch/commit/2c7035b)
+
 
 ## AI assistance
 <!-- Tools used, what they helped with, what I changed, how I checked; full notes in docs/ai-usage-log.md. -->
+Details, with what I kept or changed each time, are in [docs/ai-usage-log.md](docs/ai-usage-log.md).
+
+- **Claude Code** wrote most of the code, tests, synthetic data and log drafts, following design decisions I specified in phased prompts. I reviewed each phase before committing and ran the tests and browser walkthroughs.
+- **Claude (chat)** helped plan the schedule, find and check sources, draft the decision matrix, concept statement, improvement tips and the system diagram, and advise on test results.
+- **My own decisions and edits:** the matchmaking focus and journey; the prompt's context rules; the trend threshold, model choice, stopping at prompt v2, upheld-is-final and the demo data; the party-report case and the reflection-chatbot idea.
+- **Checks:** 90 automated tests; live runs compared against my expected outcomes; sources checked against the papers and official pages; claims without a source removed.
+- **Gemini 3.5 Flash-Lite** is the model inside the system that proposes behaviour scores.
+
 
 ## Additional files
 <!-- What is in docs/ and data/, and any ZIP. -->
+- `docs/scope.md`: implemented, simulated and planned features.
+- `docs/development-log.md` and `docs/ai-usage-log.md`: development record and AI use.
+- `docs/expected-outcomes.md` and `docs/test-results-day3.md`: expected results per test case and the four live runs.
+- `docs/screenshots/`: screenshots of both demo stories.
+- `data/matches/`, `data/players.json`: synthetic chat logs; `data/README.md` maps test cases A–H to message IDs.
+- `data/demo/run4-match-results.json`: live run 4 results used by the demo.
+- `data/guidance.json`: improvement tips. `prompts/scoring-prompt.md`: the scoring prompt (v2).
+
+No ZIP is submitted.
+
