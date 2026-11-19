@@ -127,6 +127,7 @@ Details, with what I kept or changed each time, are in [docs/ai-usage-log.md](do
 - `docs/development-log.md` and `docs/ai-usage-log.md`: development record and AI use.
 - `docs/expected-outcomes.md` and `docs/test-results-day3.md`: expected results per test case and the four live runs.
 - `docs/screenshots/`: screenshots of both demo stories.
+- `docs/system-diagram.png` / `.svg`: system diagram; `docs/system-diagram.mmd`: its Mermaid source (drafted with Claude, checked against the code).
 - `data/matches/`, `data/players.json`: synthetic chat logs; `data/README.md` maps test cases A–H to message IDs.
 - `data/demo/run4-match-results.json`: live run 4 results used by the demo.
 - `data/guidance.json`: improvement tips. `prompts/scoring-prompt.md`: the scoring prompt (v2).

@@ -1,0 +1,96 @@
+---
+config:
+  layout: elk
+  elk:
+    mergeEdges: false
+    nodePlacementStrategy: BRANDES_KOEPF
+  flowchart:
+    curve: linear
+  fontFamily: "Inter, Arial, sans-serif"
+  themeVariables:
+    fontFamily: "Inter, Arial, sans-serif"
+    fontSize: "15px"
+---
+flowchart TB
+  subgraph DATA["DATA"]
+    D1["Synthetic chat logs<br/><small>8 players · 4 matches · mutes · reports · parties</small>"]:::sim
+    D2["Live game chat"]:::plan
+  end
+
+  subgraph AI["AI SCORING · offline (npm run score)"]
+    A0["Injection filter"]:::plan
+    A1["Scoring prompt v2"]:::impl
+    A2["Gemini 3.5 Flash-Lite<br/><b>LLM proposes</b>"]:::ai
+    A3["Validator<br/><b>code decides</b>"]:::impl
+    S1[("Match results<br/><small>latest run → run 4 → mock</small>")]:::impl
+  end
+
+  subgraph SRV["SERVER RULES · code"]
+    R6["Simulated AI error<br/><small>demo only</small>"]:::sim
+    R1["Profile builder<br/><small>recent matches weigh more</small>"]:::impl
+    R2["Evidence lookup<br/><small>real chat by ID</small>"]:::impl
+    R3["Improvement tips<br/><small>designer-written</small>"]:::impl
+    R4["Challenges"]:::impl
+    R5["Matchmaking<br/><small>safety rules, then balance</small>"]:::impl
+    R7["Chat restriction"]:::plan
+  end
+
+  subgraph UI["INTERFACE"]
+    U1["Profile page<br/><small>private</small>"]:::impl
+    U2["Lobby page<br/><small>private reasons</small>"]:::impl
+    U3["Reviewer page"]:::sim
+    U4["Coach reflection"]:::plan
+  end
+
+  subgraph PEOPLE["PEOPLE"]
+    P1(("Player")):::person
+    P2(("Reviewer")):::person
+  end
+
+  D1 -->|"chat as data"| A1
+  D2 -.-> A0
+  A0 -.-> A1
+  A1 --> A2
+  A2 -->|"JSON · retry on 503"| A3
+  A3 -->|"accepted / held back"| S1
+  S1 --> R1
+  R6 -.-> R1
+  D1 -->|"message text"| R2
+  D1 -->|"parties · reports"| R5
+  R1 -->|"Respect · Teamwork"| R5
+  R1 --> U1
+  R2 --> U1
+  R3 --> U1
+  R2 -->|"context lines"| U3
+  R5 -->|"teams + reasons"| U2
+  R4 -->|"ticket"| U3
+  S1 -.->|"unsure scores"| U3
+  R7 -.-> U4
+  U1 --> P1
+  U2 --> P1
+  U3 --> P2
+  P1 ==>|"challenge"| R4
+  P2 ==>|"uphold / overturn"| R4
+  R4 ==>|"overturned match excluded"| R1
+
+  subgraph KEY["KEY"]
+    K1["Implemented"]:::impl
+    K2["AI component"]:::ai
+    K3["Simulated"]:::sim
+    K4["Planned"]:::plan
+    K5["━━ red: feedback loop"]:::note
+  end
+
+  classDef impl fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#1b1b1b
+  classDef ai fill:#e3f2fd,stroke:#1565c0,stroke-width:3px,color:#0d2a52
+  classDef sim fill:#fff8e1,stroke:#e0a100,stroke-width:2px,stroke-dasharray:6 4,color:#1b1b1b
+  classDef plan fill:#fafafa,stroke:#9e9e9e,stroke-width:1.5px,stroke-dasharray:2 4,color:#757575
+  classDef person fill:#ffffff,stroke:#333,stroke-width:2px,color:#1b1b1b
+  classDef note fill:#ffffff,stroke:#ffffff,color:#c62828,font-weight:bold
+  style DATA fill:#f7f9fc,stroke:#c9d3e0,color:#44546a
+  style AI fill:#f7f9fc,stroke:#c9d3e0,color:#44546a
+  style SRV fill:#f7f9fc,stroke:#c9d3e0,color:#44546a
+  style UI fill:#f7f9fc,stroke:#c9d3e0,color:#44546a
+  style PEOPLE fill:#f7f9fc,stroke:#c9d3e0,color:#44546a
+  style KEY fill:#ffffff,stroke:#c9d3e0,color:#44546a
+  linkStyle 22,23,24 stroke:#c62828,stroke-width:3px
