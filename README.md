@@ -124,6 +124,7 @@ Details, with what I kept or changed each time, are in [docs/ai-usage-log.md](do
 ## Additional files
 <!-- What is in docs/ and data/, and any ZIP. -->
 - `docs/scope.md`: implemented, simulated and planned features.
+- `docs/decision-matrix.md`: the 11 Nov decision matrix used to choose ClearMatch over three other options.
 - `docs/development-log.md` and `docs/ai-usage-log.md`: development record and AI use.
 - `docs/expected-outcomes.md` and `docs/test-results-day3.md`: expected results per test case and the four live runs.
 - `docs/screenshots/`: screenshots of both demo stories.
