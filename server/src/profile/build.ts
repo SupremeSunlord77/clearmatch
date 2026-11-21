@@ -32,7 +32,7 @@ export interface DimensionView {
   trend: TrendWord;
   expanded: boolean; // D7: low or declining
   loweringMatches: LoweringMatch[];
-  underReviewCount: number; // validator sent to a person: "not counted yet"
+  underReviewCount: number; // validator held back (low confidence or bad evidence): not counted; reviewer queue planned
   tips: string[]; // up to 2
   improvingAck: boolean;
 }

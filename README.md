@@ -115,7 +115,7 @@ The full record, with what was checked for each change, is in [docs/development-
 Details, with what I kept or changed each time, are in [docs/ai-usage-log.md](docs/ai-usage-log.md).
 
 - **Claude Code** wrote most of the code, tests, synthetic data and log drafts, following design decisions I specified in phased prompts. I reviewed each phase before committing and ran the tests and browser walkthroughs.
-- **Claude (chat)** helped plan the schedule, find and check sources, draft the decision matrix, concept statement, improvement tips and the system diagram, and advise on test results.
+- **Claude (chat)** helped plan the schedule, find and check sources, draft the decision matrix, concept statement, improvement tips, the system diagram, the storyboard layout and captions, and advise on test results. It also found UI text that wrongly said uncertain AI scores go to a person, which I then fixed.
 - **My own decisions and edits:** the matchmaking focus and journey; the prompt's context rules; the trend threshold, model choice, stopping at prompt v2, upheld-is-final and the demo data; the party-report case and the reflection-chatbot idea.
 - **Checks:** 90 automated tests; live runs compared against my expected outcomes; sources checked against the papers and official pages; claims without a source removed.
 - **Gemini 3.5 Flash-Lite** is the model inside the system that proposes behaviour scores.
@@ -127,6 +127,7 @@ Details, with what I kept or changed each time, are in [docs/ai-usage-log.md](do
 - `docs/development-log.md` and `docs/ai-usage-log.md`: development record and AI use.
 - `docs/expected-outcomes.md` and `docs/test-results-day3.md`: expected results per test case and the four live runs.
 - `docs/screenshots/`: screenshots of both demo stories.
+- `docs/storyboard-1-upheld.png`, `docs/storyboard-2-overturned.png`: the two storyboards, built from the screenshots by `docs/build_storyboards.py` (drafted with Claude).
 - `docs/system-diagram.png` / `.svg`: system diagram; `docs/system-diagram.mmd`: its Mermaid source (drafted with Claude, checked against the code).
 - `data/matches/`, `data/players.json`: synthetic chat logs; `data/README.md` maps test cases A–H to message IDs.
 - `data/demo/run4-match-results.json`: live run 4 results used by the demo.

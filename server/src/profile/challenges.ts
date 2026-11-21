@@ -76,7 +76,7 @@ export class ChallengeStore {
     const r = match.players[playerId]?.[dimension as Dimension];
     if (!r) return fail(404, `${playerId} did not play in ${matchId}`);
     if (r.status !== "accepted") {
-      return fail(400, "This match score is already with a human reviewer and does not count yet, so it cannot be challenged");
+      return fail(400, "This match score was held back because the AI was unsure, and it does not count, so it cannot be challenged");
     }
     if (r.score !== 1 && r.score !== 2) {
       return fail(400, `Only match scores of 1 or 2 can be challenged; this score is ${r.score}`);

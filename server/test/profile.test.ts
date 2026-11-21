@@ -182,7 +182,7 @@ describe("challenge rules (D4)", () => {
   test("note over 200 characters is rejected", () => {
     reject({ note: "x".repeat(201) }, 400, /note is 201 characters \(max 200\)/);
   });
-  test("a match score already with a human reviewer cannot be challenged", () => {
+  test("a held-back match score cannot be challenged", () => {
     const results: MatchResultsFile = structuredClone(baseResults);
     results.matches[0].players.p2.respect.status = "needs_review";
     const r = new ChallengeStore(null).create({ playerId: "p2", dimension: "respect", matchId: "match_01", reason: "other" }, { players, results });

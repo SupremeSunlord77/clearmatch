@@ -41,8 +41,8 @@ export const copy = {
     aiSummaryLabel: "AI summary",
     underReview: (n: number) =>
       n === 1
-        ? "1 match score is with a person for review and is not counted yet."
-        : `${n} match scores are with a person for review and are not counted yet.`,
+        ? "1 match score was too uncertain to use, so it is not counted."
+        : `${n} match scores were too uncertain to use, so they are not counted.`,
     tipsHeading: "Ideas to try",
     improvingAck: "Your recent matches show improvement here. Nice work.",
   },
@@ -121,7 +121,7 @@ export const copy = {
     points: [
       "We look at your chat across your last 4 matches.",
       "Recent matches count more than older ones.",
-      "When the AI is unsure, a person checks before anything counts.",
+      "When the AI is unsure, that match score is not counted.",
       "If a match gave you a low score, you can challenge it and a person will review it.",
     ],
   },
