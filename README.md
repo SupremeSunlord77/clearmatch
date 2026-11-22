@@ -117,7 +117,7 @@ Details, with what I kept or changed each time, are in [docs/ai-usage-log.md](do
 - **Claude Code** wrote most of the code, tests, synthetic data and log drafts, following design decisions I specified in phased prompts. I reviewed each phase before committing and ran the tests and browser walkthroughs.
 - **Claude (chat)** helped plan the schedule, find and check sources, draft the decision matrix, concept statement, improvement tips, the system diagram, the storyboard layout and captions, and advise on test results. It also found UI text that wrongly said uncertain AI scores go to a person, which I then fixed.
 - **My own decisions and edits:** the matchmaking focus and journey; the prompt's context rules; the trend threshold, model choice, stopping at prompt v2, upheld-is-final and the demo data; the party-report case and the reflection-chatbot idea.
-- **Checks:** 90 automated tests; live runs compared against my expected outcomes; sources checked against the papers and official pages; claims without a source removed.
+- **Checks:** 89 automated tests (90 when your own `output/match-results.json` exists, because one simulated-error test also runs on it); live runs compared against my expected outcomes; sources checked against the papers and official pages; claims without a source removed.
 - **Gemini 3.5 Flash-Lite** is the model inside the system that proposes behaviour scores.
 
 
