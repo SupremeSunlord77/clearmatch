@@ -101,11 +101,11 @@ board("Storyboard 1 · A real AI judgement, challenged and upheld",
       [("s1-01-profile.png", "Opens their private profile.", "Respect 3.8, Good, Improving. Match 1 lowered it: exact chat lines plus a labelled AI summary.", None),
        ("s1-02-challenge-form.png", "Clicks “Challenge this score” and picks a reason.", "Offers fixed reasons and an optional note (200 characters).", None),
        ("s1-03-under-review.png", "Submits the challenge.", "Shows “Challenged — under review”; the score still counts while pending.", None),
-       ("s1-04-reviewer.png", None, "Reviewer sees the AI's proposal (2 of 5, confidence 0.90) and each evidence line with 2 messages before and after.", None),
+       ("s1-04-reviewer.png", None, "Reviewer sees the AI's proposal (2 out of 5, confidence 0.90) and each evidence line with 2 messages before and after.", None),
        ("s1-05-upheld.png", "Reads the decision.", "“Upheld on review” with the reviewer's comment; the decision is final.", None),
        ("s1-06-lobby.png", "Clicks “Find next match”.", "Shows both teams (names only) and private reasons: teams balanced by teamwork.", None)],
       "storyboard-1-upheld.png",
-      "Control: the player can contest; a human decides; the explanation stays visible.")
+      "Control: the player can contest; a (simulated) reviewer decides; the explanation stays visible.")
 
 board("Storyboard 2 · An AI error, challenged and overturned",
       "Havoc (p5) is wrongly marked down for game language; overturning it restores the profile and the lobby explanation.",
@@ -117,4 +117,4 @@ board("Storyboard 2 · An AI error, challenged and overturned",
        ("s2-06-overturned.png", "Returns to the profile.", "“Overturned on review — this match no longer counts”; Respect recalculated to 3.0, Neutral.", None),
        ("s2-07-lobby-after.png", "Finds the next match.", "The Low and fairness messages are gone; same teams, explanation restored.", None)],
       "storyboard-2-overturned.png",
-      "Closed loop: challenge → human review → profile recalculated → next lobby explanation changes.")
+      "Closed loop: challenge → simulated review → profile recalculated → next lobby explanation changes.")

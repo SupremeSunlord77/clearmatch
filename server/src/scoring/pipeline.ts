@@ -19,7 +19,7 @@ export async function scoreOneMatch(
   try {
     raw = await withRetry(() => provider.scoreMatch({ matchId: match.id, prompt }), { label: match.id, ...retry });
   } catch (err) {
-    // The call failed, so there is no model output to validate: the whole match goes to review.
+    // The call failed, so there is no model output to validate: the whole match is held back (needs_review) and not counted.
     const reason = `provider call failed: ${describeProviderError(err, retry.secrets)}`;
     return { ...rejectAll(match, reason), rawResponse: null };
   }

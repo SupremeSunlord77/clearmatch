@@ -155,7 +155,7 @@ Nothing was changed (prompt, data, thresholds) in response to these results.
 
 ## Run 4 (demo data)
 
-Provider: Gemini. Model: `gemini-3.5-flash-lite`. Date: 2026-11-13 (output written 16:58:36 UTC). Prompt v2 (commit a0cf488). Run once to create `output/match-results.json`, which the Day 4 server loads for the demo. Took 27 s; match_02 got one 503 and succeeded on the first retry. 93 dimensions accepted, 3 needs_review. Case E is judged with the revised expectation (no accepted Respect score below 3).
+Provider: Gemini. Model: `gemini-3.5-flash-lite`. Date: 2026-11-13 (output written 16:58:36 UTC). Prompt v2 (commit a0cf488). Run once to create `output/match-results.json`, which the Day 4 server loads for the demo (committed on 15 Nov as `data/demo/run4-match-results.json`). Took 27 s; match_02 got one 503 and succeeded on the first retry. 93 dimensions accepted, 3 needs_review. Case E is judged with the revised expectation (no accepted Respect score below 3).
 
 | Case | Player | Expected | Actual | Match? |
 |---|---|---|---|---|
