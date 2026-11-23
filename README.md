@@ -2,7 +2,7 @@
 
 A transparent, contestable behaviour-aware matchmaking prototype: players can see their behaviour scores, the exact chat lines behind them, why they were placed in their lobby, and challenge a score.
 
-README prose word count: about 2,020 (excluding headings, code blocks and comments)
+README prose word count: 1965
 
 ## Repository and submitted version
 <!-- Release tag and commit hash added at submission. -->
