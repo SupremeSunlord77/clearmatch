@@ -2,13 +2,13 @@
 
 A transparent, contestable behaviour-aware matchmaking prototype: players can see their behaviour scores, the exact chat lines behind them, why they were placed in their lobby, and challenge a score.
 
-README prose word count: TBC
+README prose word count: about 2,020 (excluding headings, code blocks and comments)
 
 ## Repository and submitted version
 <!-- Release tag and commit hash added at submission. -->
 Repository: https://github.com/SupremeSunlord77/clearmatch
 
-Submitted version: release tag `v1.0`, commit `TBC` (added at submission).
+Submitted version: the commit tagged `v1.0` in this repository.
 
 
 ## Project status
@@ -128,7 +128,7 @@ Details, with what I kept or changed each time, are in [docs/ai-usage-log.md](do
 - `docs/development-log.md` and `docs/ai-usage-log.md`: development record and AI use.
 - `docs/expected-outcomes.md` and `docs/test-results-day3.md`: expected results per test case and the four live runs.
 - `docs/screenshots/`: screenshots of both demo stories.
-- `docs/storyboard-1-upheld.png`, `docs/storyboard-2-overturned.png`: the two storyboards, built from the screenshots by `docs/build_storyboards.py` (drafted with Claude).
+- `docs/storyboard-1-upheld.png`, `docs/storyboard-2-overturned.png`, `docs/storyboard-3-reviewer.png`: the three storyboards, built from the screenshots by `docs/build_storyboards.py` (drafted with Claude).
 - `docs/system-diagram.png` / `.svg`: system diagram; `docs/system-diagram.mmd`: its Mermaid source (drafted with Claude, checked against the code).
 - `data/matches/`, `data/players.json`: synthetic chat logs; `data/README.md` maps test cases A–H to message IDs.
 - `data/demo/run4-match-results.json`: live run 4 results used by the demo.
